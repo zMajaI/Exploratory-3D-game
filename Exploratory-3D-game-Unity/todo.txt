@@ -1,0 +1,21 @@
+Parsing questions and displaying them
+Determine if you could use UI unity, without creating additional support 
+Create UI for each screen
+Create 3D ground with interaction
+Audio support
+Create way for storing new questions, audio etc - they shouuld be packed separetly?
+
+
+QuestionUI
+- holds UI for question scene
+QuestionController
+- communicates with Model and populates View
+QuestionModel
+- communicates with file and provides load/store options 
+Do I need Controller? 
+
+MainUI
+- holds all elements from login screen: selection of game level, saving user id, display of liderboards? 
+MainController
+- performes loading of level.
+

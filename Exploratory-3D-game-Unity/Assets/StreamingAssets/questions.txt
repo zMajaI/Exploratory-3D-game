@@ -1,0 +1,17 @@
+start_question 1
+0
+1000
+"blah"
+"Pitanje"
+10
+start_answer 1
+"odg1"
+true
+"blah1"
+end_answer 1
+start_answer 2
+"Odg2"
+true
+"blah2"
+end_answer 2
+end_question 1
