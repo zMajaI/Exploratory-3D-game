@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Questioning
+namespace zm.Questioning
 {
     /// <summary>
     /// Wrapped all data needed for one Question. Contains list of answers, where only one answer could be correct.

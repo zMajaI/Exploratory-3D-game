@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using zm.Util;
 
-namespace Questioning
+namespace zm.Questioning
 {
     /// <summary>
     /// This class is responsible for loading/storing questions.
@@ -19,7 +20,7 @@ namespace Questioning
     /// end_answer Id
     /// end_question Id
     /// </summary>
-    public class QuestionsModel
+	public class QuestionsModel : GenericSingleton<QuestionsModel>
     {
         #region Constants
 

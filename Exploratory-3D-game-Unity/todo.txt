@@ -19,3 +19,11 @@ MainUI
 MainController
 - performes loading of level.
 
+
+
+Questions:
+- create renderer for answer - dinamicaly creating of renderers, scroll bar - just to add support for more than three answers
+- add all needed fields for answer and question: fields that user can edit
+- create separated object that has all these components that can be edited - editing should be done in some overlay? When clicks on change question or on add it will be opened
+
+

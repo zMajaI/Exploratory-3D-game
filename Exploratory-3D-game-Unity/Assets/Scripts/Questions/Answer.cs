@@ -1,4 +1,4 @@
-﻿namespace Questioning
+﻿namespace zm.Questioning
 {
     /// <summary>
     /// Class wrapping all data needed for one answer. 

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
-namespace Questioning
+namespace zm.Questioning
 {
     /// <summary>
     /// Class responsible for holding all UI components in Questions scene.
