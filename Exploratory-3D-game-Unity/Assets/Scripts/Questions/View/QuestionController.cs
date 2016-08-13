@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using zm.Util;
 
 namespace zm.Questioning
 {
@@ -7,15 +9,21 @@ namespace zm.Questioning
 	/// </summary>
 	public class QuestionController : MonoBehaviour
 	{
+		#region MonoBehaviour Methods
+
+		private void Start()
+		{
+			Model.Initialize();
+			UI.InitializeView(Model.GetQuestions(QuestionCategory.Fruits), Model.Categories);
+		}
+
+		#endregion MonoBehaviour Methods
 
 		#region Fields and Properties
 
 		private QuestionsModel Model
 		{
-			get
-			{
-				return QuestionsModel.Instance;
-			}
+			get { return QuestionsModel.Instance; }
 		}
 
 		[SerializeField]
@@ -25,45 +33,62 @@ namespace zm.Questioning
 
 		#region Event Handlers
 
+		/// <summary>
+		/// Handler for adding new question to selected category.
+		/// </summary>
 		public void OnClickBtnAdd()
 		{
-			
+			UI.InitializeEditableQuestionView(new Question(UI.SelectedCategory));
 		}
 
+		/// <summary>
+		/// Handler for click on remove question button. 
+		/// </summary>
 		public void OnClickBtnRemove()
 		{
-			
+			// remove question
+			List<Question> questions = Model.GetQuestions(UI.SelectedCategory);
+			Model.RemoveQuestion(questions[UI.SelectedQuestion]);
+
+			// repopulate view after 
+			OnValueChangedCategory();
 		}
 
 		public void OnClickBtnChange()
 		{
-			
+			List<Question> questions = Model.GetQuestions(UI.SelectedCategory);
+			UI.InitializeEditableQuestionView(questions[UI.SelectedQuestion]);
 		}
 
-		public void OnClickBtnBack()
+		public void OnClickBtnBack() {}
+
+		/// <summary>
+		/// Handler for close button on Editable Question View.
+		/// </summary>
+		public void OnClickBtnCloseEditableQuestion()
 		{
-			
+			UI.CloseEditableQuestionView();
 		}
 
-		public void OnValueChangedCategory(int newValue)
+		/// <summary>
+		/// Handler triggered when user changes category in dropdown.
+		/// </summary>
+		public void OnValueChangedCategory(int newValue = 0)
 		{
-			
+			List<Question> questions = Model.GetQuestions(UI.SelectedCategory);
+			UI.UpdateQuestionsDropDown(questions);
+			UI.UpdateQuestionView(questions.IsEmpty() ? null : questions[0]);
 		}
 
+		/// <summary>
+		/// Handler triggered when user changes selected question in dropdown.
+		/// </summary>
 		public void OnValueChangedQuestion(int newValue)
 		{
-			
+			List<Question> questions = Model.GetQuestions(UI.SelectedCategory);
+			UI.UpdateQuestionView(questions[UI.SelectedQuestion]);
 		}
 
 		#endregion Event Handlers
-
-		#region MonoBehaviour Methods
-
-		private void Start()
-		{
-			UI.InitializeView();			
-		}
-
-		#endregion MonoBehaviour Methods
 	}
 }

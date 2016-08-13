@@ -13,7 +13,7 @@ namespace zm.Questioning
 	{
 		#region Constants
 
-		private static readonly string QuestionsPath = Application.streamingAssetsPath + "/QuestionsCollection.txt";
+		private static readonly string QuestionsPath = Application.streamingAssetsPath + "/questions.txt";
 
 		#endregion Constants
 

@@ -3,7 +3,47 @@
         {
             "Category": 0,
             "TimeLimit": 1000,
-            "Text": "pitanje",
+            "Text": "pitanje1",
+            "Answers": [
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": false,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                }
+            ],
+            "Id": 1,
+            "AudioPath": "audio",
+            "Points": 100
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 1000,
+            "Text": "pitanje2",
             "Answers": [
                 {
                     "Text": "pitanje 1",
@@ -25,7 +65,7 @@
         {
             "Category": 0,
             "TimeLimit": 1000,
-            "Text": "pitanje",
+            "Text": "pitanje3",
             "Answers": [
                 {
                     "Text": "pitanje 1",
@@ -47,7 +87,7 @@
         {
             "Category": 0,
             "TimeLimit": 1000,
-            "Text": "pitanje",
+            "Text": "pitanje 6",
             "Answers": [
                 {
                     "Text": "pitanje 1",
@@ -69,7 +109,7 @@
         {
             "Category": 0,
             "TimeLimit": 1000,
-            "Text": "pitanje",
+            "Text": "pitanje 7",
             "Answers": [
                 {
                     "Text": "pitanje 1",
@@ -91,73 +131,7 @@
         {
             "Category": 0,
             "TimeLimit": 1000,
-            "Text": "pitanje",
-            "Answers": [
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                },
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                }
-            ],
-            "Id": 1,
-            "AudioPath": "audio",
-            "Points": 100
-        },
-        {
-            "Category": 0,
-            "TimeLimit": 1000,
-            "Text": "pitanje",
-            "Answers": [
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                },
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                }
-            ],
-            "Id": 1,
-            "AudioPath": "audio",
-            "Points": 100
-        },
-        {
-            "Category": 0,
-            "TimeLimit": 1000,
-            "Text": "pitanje",
-            "Answers": [
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                },
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                }
-            ],
-            "Id": 1,
-            "AudioPath": "audio",
-            "Points": 100
-        },
-        {
-            "Category": 0,
-            "TimeLimit": 1000,
-            "Text": "pitanje",
+            "Text": "pitanje 8",
             "Answers": [
                 {
                     "Text": "pitanje 1",

@@ -24,6 +24,9 @@ namespace zm.Questioning
 			Points = points;
 		}
 
+		public Question(QuestionCategory category)
+			: this(category, 0L, "", new List<Answer>(), -1, "", 0) {}
+
 		#endregion Constructor
 
 		#region Fields and Properties
@@ -69,6 +72,7 @@ namespace zm.Questioning
 	public enum QuestionCategory
 	{
 		Fruits = 0,
-		Vegetables
+		Vegetables,
+		PizdaMaterina
 	}
 }
