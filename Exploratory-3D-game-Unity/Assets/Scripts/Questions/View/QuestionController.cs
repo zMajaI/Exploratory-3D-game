@@ -3,7 +3,7 @@
 namespace zm.Questioning
 {
 	/// <summary>
-	/// Class used for populating Questions scene and communicating with QuestionsModel.
+	/// Class used for populating QuestionsCollection scene and communicating with QuestionsModel.
 	/// </summary>
 	public class QuestionController : MonoBehaviour
 	{

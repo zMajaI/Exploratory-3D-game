@@ -1,57 +1,74 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace zm.Questioning
 {
-    /// <summary>
-    /// Wrapped all data needed for one Question. Contains list of answers, where only one answer could be correct.
-    /// Each question must have at least two answers.
-    /// </summary>
-    public class Question
-    {
-        #region Fields and Properties
+	/// <summary>
+	/// Wrapped all data needed for one Question. Contains list of answers, where only one answer could be correct.
+	/// Each question must have at least two answers.
+	/// All fields have to be public to be serialized by JsonUtil.
+	/// </summary>
+	[Serializable]
+	public class Question
+	{
+		#region Constructor
 
-        /// <summary>
-        /// Category to which this question belongs.
-        /// </summary>
-        public QuestionCategory Category { get; private set; }
+		public Question(QuestionCategory category, long timeLimit, string text, List<Answer> answers, int id, string audioPath, int points)
+		{
+			Category = category;
+			TimeLimit = timeLimit;
+			Text = text;
+			Answers = answers;
+			Id = id;
+			AudioPath = audioPath;
+			Points = points;
+		}
 
-        /// <summary>
-        /// Time limit  for this question, in milliseconds.
-        /// </summary>
-        public long TimeLimit { get; private set; }
+		#endregion Constructor
 
-        /// <summary>
-        /// Text represents body of question.
-        /// </summary>
-        public string Text { get; private set; }
+		#region Fields and Properties
 
-        /// <summary>
-        /// List of answers, where only one is correct.
-        /// </summary>
-        public List<Answer> Answers { get; private set; }
+		/// <summary>
+		/// Category to which this question belongs.
+		/// </summary>
+		public QuestionCategory Category;
 
-        /// <summary>
-        /// Each question has unique id. It's used for load/store operations.
-        /// </summary>
-        public int Id { get; private set; }
+		/// <summary>
+		/// Time limit  for this question, in milliseconds.
+		/// </summary>
+		public long TimeLimit;
 
-        /// <summary>
-        /// Path to Audio source for this question.
-        /// </summary>
-        public string AudioPath { get; private set; }
+		/// <summary>
+		/// Text represents body of question.
+		/// </summary>
+		public string Text;
 
-        /// <summary>
-        /// Number of points that will user get if he answers correctly.
-        /// </summary>
-        public int Points { get; private set; }
+		/// <summary>
+		/// List of answers, where only one is correct.
+		/// </summary>
+		public List<Answer> Answers;
 
-        #endregion Field and Properties
-    }
+		/// <summary>
+		/// Each question has unique id. It's used for load/store operations.
+		/// </summary>
+		public int Id;
 
-    public enum QuestionCategory
-    {
-        Fruits = 0,
-        Vegetables
-    }
+		/// <summary>
+		/// Path to Audio source for this question.
+		/// </summary>
+		public string AudioPath;
 
+		/// <summary>
+		/// Number of points that will user get if he answers correctly.
+		/// </summary>
+		public int Points;
+
+		#endregion Field and Properties
+	}
+
+	public enum QuestionCategory
+	{
+		Fruits = 0,
+		Vegetables
+	}
 }

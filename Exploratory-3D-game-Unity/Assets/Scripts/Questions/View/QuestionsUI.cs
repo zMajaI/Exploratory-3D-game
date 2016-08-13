@@ -3,7 +3,7 @@
 namespace zm.Questioning
 {
     /// <summary>
-    /// Class responsible for holding all UI components in Questions scene.
+    /// Class responsible for holding all UI components in QuestionsCollection scene.
     /// </summary>
     public class QuestionsUI : MonoBehaviour
     {

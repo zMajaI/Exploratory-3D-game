@@ -1,33 +1,49 @@
-﻿namespace zm.Questioning
+﻿using System;
+
+namespace zm.Questioning
 {
     /// <summary>
     /// Class wrapping all data needed for one answer. 
+    /// All fields have to be public to be serialized by JsonUtil.
     /// </summary>
+    [Serializable]
     public class Answer
-    {
-        #region Fields and Properties
+	{
+		#region Constructor
 
-        /// <summary>
-        /// Answer body, holding text that should be displayed.
-        /// </summary>
-        public string Text { get; private set; }
+		public Answer(string text, bool isCorrect, int id, string audioPath)
+	    {
+		    Text = text;
+		    IsCorrect = isCorrect;
+		    Id = id;
+		    AudioPath = audioPath;
+	    }
 
-        /// <summary>
-        /// Flag indicating if this answer is correct for question where it belongs.
-        /// </summary>
-        public bool IsCorrect { get; private set; }
+		#endregion Constructor
 
-        /// <summary>
-        /// Unique id for answer, relative to question.
-        /// </summary>
-        public int Id { get; private set; }
+		#region Fields and Properties
 
-        /// <summary>
-        /// Path to Audio source for this answer.
-        /// </summary>
-        public string AudioPath { get; private set; }
+		/// <summary>
+	    /// Answer body, holding text that should be displayed.
+	    /// </summary>
+	    public string Text;
 
-        #endregion Fields and Properities
-    }
+	    /// <summary>
+	    /// Flag indicating if this answer is correct for question where it belongs.
+	    /// </summary>
+	    public bool IsCorrect;
+
+	    /// <summary>
+	    /// Unique id for answer, relative to question.
+	    /// </summary>
+	    public int Id;
+
+	    /// <summary>
+	    /// Path to Audio source for this answer.
+	    /// </summary>
+	    public string AudioPath;
+
+	    #endregion Fields and Properities
+	}
 
 }

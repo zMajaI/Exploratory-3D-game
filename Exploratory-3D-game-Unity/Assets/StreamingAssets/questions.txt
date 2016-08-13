@@ -1,17 +1,180 @@
-start_question 1
-0
-1000
-"blah"
-"Pitanje"
-10
-start_answer 1
-"odg1"
-true
-"blah1"
-end_answer 1
-start_answer 2
-"Odg2"
-true
-"blah2"
-end_answer 2
-end_question 1
+{
+    "Collection": [
+        {
+            "Category": 0,
+            "TimeLimit": 1000,
+            "Text": "pitanje",
+            "Answers": [
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                }
+            ],
+            "Id": 1,
+            "AudioPath": "audio",
+            "Points": 100
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 1000,
+            "Text": "pitanje",
+            "Answers": [
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                }
+            ],
+            "Id": 1,
+            "AudioPath": "audio",
+            "Points": 100
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 1000,
+            "Text": "pitanje",
+            "Answers": [
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                }
+            ],
+            "Id": 1,
+            "AudioPath": "audio",
+            "Points": 100
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 1000,
+            "Text": "pitanje",
+            "Answers": [
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                }
+            ],
+            "Id": 1,
+            "AudioPath": "audio",
+            "Points": 100
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 1000,
+            "Text": "pitanje",
+            "Answers": [
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                }
+            ],
+            "Id": 1,
+            "AudioPath": "audio",
+            "Points": 100
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 1000,
+            "Text": "pitanje",
+            "Answers": [
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                }
+            ],
+            "Id": 1,
+            "AudioPath": "audio",
+            "Points": 100
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 1000,
+            "Text": "pitanje",
+            "Answers": [
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                }
+            ],
+            "Id": 1,
+            "AudioPath": "audio",
+            "Points": 100
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 1000,
+            "Text": "pitanje",
+            "Answers": [
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                },
+                {
+                    "Text": "pitanje 1",
+                    "IsCorrect": true,
+                    "Id": 1,
+                    "AudioPath": "bla"
+                }
+            ],
+            "Id": 1,
+            "AudioPath": "audio",
+            "Points": 100
+        }
+    ]
+}
