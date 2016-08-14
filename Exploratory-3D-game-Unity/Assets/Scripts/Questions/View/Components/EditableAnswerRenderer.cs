@@ -16,6 +16,11 @@ namespace zm.Questioning
 			answer.IsCorrect = toggleIsCorrect.isOn;
 		}
 
+		public void SetToggleGroup(ToggleGroup group)
+		{
+			toggleIsCorrect.group = group;
+		}
+
 		#endregion Public Methods
 
 		#region Fields and Properties

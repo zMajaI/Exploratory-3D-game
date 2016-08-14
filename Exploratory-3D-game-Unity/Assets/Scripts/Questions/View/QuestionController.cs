@@ -124,12 +124,6 @@ namespace zm.Questioning
 			UI.EditableQuestionView.AddAnswer(answer);
 		}
 
-		/// <summary>
-		/// Handler that is triggered when any toggle from answers is changed.
-		/// Only one answer can be correct.
-		/// </summary>
-		public void OnToggleIsCorrectAnswerChanged() {}
-
 		#endregion Event Handlers
 	}
 }

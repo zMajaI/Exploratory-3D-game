@@ -91,7 +91,7 @@
             "Answers": [
                 {
                     "Text": "pitanje 1",
-                    "IsCorrect": true,
+                    "IsCorrect": false,
                     "Id": 1,
                     "AudioPath": "bla"
                 },

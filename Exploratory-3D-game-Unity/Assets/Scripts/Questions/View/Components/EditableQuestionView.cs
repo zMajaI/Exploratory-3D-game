@@ -31,9 +31,7 @@ namespace zm.Questioning
 
 				for (int i = 0; i < value.Answers.Count; i++)
 				{
-					EditableAnswerRenderer answerRenderer = Instantiate(answerRendererPrefab);
-					answerRenderer.Answer = value.Answers[i];
-					answerRenderer.transform.SetParent(lstAnswers.transform, false);
+					AddAnswer(value.Answers[i]);
 				}
 			}
 			get { return question; }
@@ -54,6 +52,9 @@ namespace zm.Questioning
 		[SerializeField]
 		private VerticalLayoutGroup lstAnswers;
 
+		[SerializeField]
+		private ToggleGroup toggleGroupAnswers;
+		
 		#region Prefabs
 
 		[SerializeField]
@@ -89,6 +90,7 @@ namespace zm.Questioning
 			EditableAnswerRenderer answerRenderer = Instantiate(answerRendererPrefab);
 			answerRenderer.Answer = answer;
 			answerRenderer.transform.SetParent(lstAnswers.transform, false);
+			answerRenderer.SetToggleGroup(toggleGroupAnswers);
 		}
 
 		#endregion Public Methods
