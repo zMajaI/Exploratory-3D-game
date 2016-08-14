@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using zm.Common;
 using zm.Util;
 
 namespace zm.Questioning
@@ -60,7 +61,10 @@ namespace zm.Questioning
 			UI.InitializeEditableQuestionView(questions[UI.SelectedQuestion]);
 		}
 
-		public void OnClickBtnBack() {}
+		public void OnClickBtnBack()
+		{
+			SceneNavigation.LoadMain();
+		}
 
 		/// <summary>
 		/// Handler for close button on Editable Question View.
