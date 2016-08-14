@@ -30,7 +30,7 @@ namespace zm.Main
 		/// </summary>
 		public void OnClickBtnQuestions()
 		{
-			//TODO display passwor shit
+			//TODO display password shit
 			SceneNavigation.LoadQuestions();
 		}
 

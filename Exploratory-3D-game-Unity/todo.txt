@@ -30,5 +30,7 @@ Questions:
 - add check if everything is okay when editing questions
 
 MainScene:
+-leaderboards, filtereing - model for leaderboards 
 
+SCALING of UI canvas/ maybe to have centered everything, and then just background image? Camera - depth only? Clear flags? Background image?
 
