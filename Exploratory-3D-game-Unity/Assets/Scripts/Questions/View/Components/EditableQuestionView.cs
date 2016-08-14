@@ -4,9 +4,14 @@ using zm.Util;
 
 namespace zm.Questioning
 {
+	/// <summary>
+	/// Component that represents one question that is either newly created or existing but modified.
+	/// </summary>
 	public class EditableQuestionView : MonoBehaviour
 	{
 		#region Fields and Properties
+
+		private Question question;
 
 		/// <summary>
 		/// Populates view for passed question.
@@ -15,31 +20,33 @@ namespace zm.Questioning
 		{
 			set
 			{
-				//lblQuestionCategory.text = "Category: " + value.Category.ToText();
-				//lblQuestionPoints.text = "Points: " + value.Points;
-				//lblQuestionTime.text = "Time: " + value.TimeLimit;
-				//lblQuestionContent.text = value.Text;
+				question = value;
+				lblQuestionCategory.text = "Category: " + value.Category.ToText();
+				inputQuestionPoints.text = value.Points.ToString();
+				inputQuestionTime.text = value.TimeLimit.ToString();
+				inputQuestionContent.text = value.Text;
 
-				//// remove all children
-				//lstAnswers.transform.Clear();
+				// remove all children
+				lstAnswers.transform.Clear();
 
-				//for (int i = 0; i < value.Answers.Count; i++)
-				//{
-				//	AnswerRenderer answerRenderer = Instantiate(answerRendererPrefab);
-				//	answerRenderer.Answer = value.Answers[i];
-				//	answerRenderer.transform.SetParent(lstAnswers.transform, false);
-				//}
+				for (int i = 0; i < value.Answers.Count; i++)
+				{
+					EditableAnswerRenderer answerRenderer = Instantiate(answerRendererPrefab);
+					answerRenderer.Answer = value.Answers[i];
+					answerRenderer.transform.SetParent(lstAnswers.transform, false);
+				}
 			}
+			get { return question; }
 		}
 
 		[SerializeField]
-		private Text lblQuestionContent;
+		private InputField inputQuestionContent;
 
 		[SerializeField]
-		private Text lblQuestionPoints;
+		private InputField inputQuestionPoints;
 
 		[SerializeField]
-		private Text lblQuestionTime;
+		private InputField inputQuestionTime;
 
 		[SerializeField]
 		private Text lblQuestionCategory;
@@ -50,10 +57,40 @@ namespace zm.Questioning
 		#region Prefabs
 
 		[SerializeField]
-		private AnswerRenderer answerRendererPrefab;
+		private EditableAnswerRenderer answerRendererPrefab;
 
 		#endregion Prefabs
 
 		#endregion Fields and Properties
+
+		#region Public Methods
+
+		/// <summary>
+		/// Records all changes from the view to Question.
+		/// </summary>
+		public void RecordQuestion()
+		{
+			question.Text = inputQuestionContent.text;
+			question.Points = int.Parse(inputQuestionPoints.text);
+			question.TimeLimit = long.Parse(inputQuestionTime.text);
+
+			foreach (Transform answerView in lstAnswers.transform)
+			{
+				EditableAnswerRenderer answerRenderer = answerView.gameObject.GetComponent<EditableAnswerRenderer>();
+				answerRenderer.RecordAnswer();
+			}
+		}
+
+		/// <summary>
+		/// Creates new view for passed answer.
+		/// </summary>
+		public void AddAnswer(Answer answer)
+		{
+			EditableAnswerRenderer answerRenderer = Instantiate(answerRendererPrefab);
+			answerRenderer.Answer = answer;
+			answerRenderer.transform.SetParent(lstAnswers.transform, false);
+		}
+
+		#endregion Public Methods
 	}
 }

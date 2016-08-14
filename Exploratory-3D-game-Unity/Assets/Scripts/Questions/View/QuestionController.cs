@@ -21,7 +21,7 @@ namespace zm.Questioning
 
 		#region Fields and Properties
 
-		private QuestionsModel Model
+		private static QuestionsModel Model
 		{
 			get { return QuestionsModel.Instance; }
 		}
@@ -42,7 +42,7 @@ namespace zm.Questioning
 		}
 
 		/// <summary>
-		/// Handler for click on remove question button. 
+		/// Handler for click on remove question button.
 		/// </summary>
 		public void OnClickBtnRemove()
 		{
@@ -83,11 +83,52 @@ namespace zm.Questioning
 		/// <summary>
 		/// Handler triggered when user changes selected question in dropdown.
 		/// </summary>
-		public void OnValueChangedQuestion(int newValue)
+		public void OnValueChangedQuestion(int newValue = 0)
 		{
 			List<Question> questions = Model.GetQuestions(UI.SelectedCategory);
 			UI.UpdateQuestionView(questions[UI.SelectedQuestion]);
 		}
+
+		/// <summary>
+		/// Handler for mouse click on save button in editable question view.
+		/// </summary>
+		public void OnClickBtnSaveQuestion()
+		{
+			List<Question> questions = Model.GetQuestions(UI.SelectedCategory);
+
+			UI.EditableQuestionView.RecordQuestion();
+
+			// If question already exists just trigger update
+			if (questions.Contains(UI.EditableQuestionView.Question))
+			{
+				Model.ChangeQuestion(UI.EditableQuestionView.Question);
+			}
+			else
+			{
+				// If this is new question - add it to existing pool
+				Model.AddQuestion(UI.EditableQuestionView.Question);
+			}
+			// Close editable question and update view
+			OnClickBtnCloseEditableQuestion();
+			OnValueChangedQuestion();
+			OnValueChangedCategory();
+		}
+
+		/// <summary>
+		/// Handler for mouse click on button for adding new answer to  editable question.
+		/// </summary>
+		public void OnClickBtnAddAnswer()
+		{
+			Answer answer = new Answer();
+			UI.EditableQuestionView.Question.Answers.Add(answer);
+			UI.EditableQuestionView.AddAnswer(answer);
+		}
+
+		/// <summary>
+		/// Handler that is triggered when any toggle from answers is changed.
+		/// Only one answer can be correct.
+		/// </summary>
+		public void OnToggleIsCorrectAnswerChanged() {}
 
 		#endregion Event Handlers
 	}
