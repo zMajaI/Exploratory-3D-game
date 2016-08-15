@@ -10,6 +10,11 @@ namespace zm.Main
 		[SerializeField]
 		private MainUI UI;
 
+        private static MainModel Model
+        {
+            get { return MainModel.Instance; }
+        }
+
 		#endregion Fields and Properties
 
 		#region MonoBehaviour Methods
@@ -30,9 +35,40 @@ namespace zm.Main
 		/// </summary>
 		public void OnClickBtnQuestions()
 		{
-			//TODO display password shit
-			SceneNavigation.LoadQuestions();
+			UI.ShowPasswordComponent();
 		}
+
+        /// <summary>
+        /// Handler for starting game. Loads selected level.
+        /// </summary>
+        public void OnClickBtnStart()
+        {
+
+        }
+
+        /// <summary>
+        /// Handler for logging into question screen.
+        /// </summary>
+        public void OnClickBtnLogin()
+        {
+            if (Model.IsPasswordValid(UI.PasswordComponent.Password))
+            {
+                UI.ClosePasswordComponent();
+                SceneNavigation.LoadQuestions();
+            }
+            else
+            {
+                // Display information that password is not valid
+            }
+        }
+
+        /// <summary>
+        /// Handler for closing Password component without validation.
+        /// </summary>
+        public void OnClickBtnClosePasswordComponent()
+        {
+            UI.ClosePasswordComponent();
+        }
 
 		#endregion  Event Handlers
 	}
