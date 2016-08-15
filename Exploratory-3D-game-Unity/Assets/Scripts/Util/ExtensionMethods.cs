@@ -36,6 +36,8 @@ namespace zm.Util
 
 	public static class ListExtensions
 	{
+        static System.Random random = new System.Random();
+
 		/// <summary>
 		/// Returns true if list is empty.
 		/// </summary>
@@ -43,5 +45,10 @@ namespace zm.Util
 		{
 			return list.Count == 0;
 		}
+
+        public static T GetRandom<T>(this List<T> list)
+        {
+            return list[random.Next(list.Count)];
+        }
 	}
 }

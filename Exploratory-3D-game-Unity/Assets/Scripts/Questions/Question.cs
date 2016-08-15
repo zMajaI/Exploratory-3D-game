@@ -13,23 +13,28 @@ namespace zm.Questioning
 	{
 		#region Constructor
 
-		public Question(QuestionCategory category, long timeLimit, string text, List<Answer> answers, int id, string audioPath, int points)
+		private Question(QuestionCategory category, long timeLimit, string text, List<Answer> answers, string audioPath, int points)
 		{
 			Category = category;
 			TimeLimit = timeLimit;
 			Text = text;
 			Answers = answers;
-			Id = id;
+			Id = ++IdGen;
 			AudioPath = audioPath;
 			Points = points;
 		}
 
 		public Question(QuestionCategory category)
-			: this(category, 0L, "", new List<Answer>(), -1, "", 0) {}
+			: this(category, 0L, "", new List<Answer>(), "", 0) {}
 
 		#endregion Constructor
 
 		#region Fields and Properties
+
+        /// <summary>
+        /// Used for generating unique ids for this class.
+        /// </summary>
+        private static int IdGen = 0;
 
 		/// <summary>
 		/// Category to which this question belongs.

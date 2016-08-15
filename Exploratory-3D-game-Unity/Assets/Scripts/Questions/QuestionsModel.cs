@@ -104,18 +104,7 @@ namespace zm.Questioning
 		/// </summary>
 		public List<Question> GetQuestions(QuestionCategory category)
 		{
-			List<Question> questionsForCategory = new List<Question>();
-			for (int i = 0; i < Questions.Count; i++)
-			{
-				if (Questions[i].Category == category)
-				{
-					questionsForCategory.Add(Questions[i]);
-				}
-			}
-
-			questionsForCategory.Sort((a, b) => string.Compare(a.Text, b.Text, StringComparison.OrdinalIgnoreCase));
-
-			return questionsForCategory;
+           return questionsCollection.GetQuestions(category);
 		}
 
 		#endregion Public Methods

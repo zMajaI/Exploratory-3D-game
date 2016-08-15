@@ -11,19 +11,24 @@ namespace zm.Questioning
 	{
 		#region Constructor
 
-		public Answer(string text, bool isCorrect, int id, string audioPath)
+		private Answer(string text, bool isCorrect,string audioPath)
 		{
 			Text = text;
 			IsCorrect = isCorrect;
-			Id = id;
+			Id = ++IdGen;
 			AudioPath = audioPath;
 		}
 
-		public Answer() : this("", false, 0, "") {}
+		public Answer() : this("", false, "") {}
 
 		#endregion Constructor
 
 		#region Fields and Properties
+
+        /// <summary>
+        /// Used for generating unique ids for this class.
+        /// </summary>
+        private static int IdGen = 0;
 
 		/// <summary>
 		/// Answer body, holding text that should be displayed.
