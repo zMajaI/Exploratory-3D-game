@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEditor;
 using zm.Questioning;
+using zm.Levels;
+using UnityEngine;
+using System.IO;
 
 namespace zm.Util.EditorTools
 {
@@ -24,6 +27,35 @@ namespace zm.Util.EditorTools
 			QuestionsModel.Instance.Initialize();
 
 		}
+
+        [MenuItem("zm.LevelssCollection/Serialize")]
+        public static void SerializeLevel()
+        {
+            LevelsCollection collection = new LevelsCollection();
+            var level = new Level();
+            var v3c = new Common.Vector3Collection();
+            v3c.Collection.AddRange(new List<Vector3> { Vector3.zero, Vector3.up });
+            level.Positions = v3c;
+            level.MaxNumQuestions = 10;
+            level.Categories = new QuestionCategory[]{QuestionCategory.Fruits, QuestionCategory.PizdaMaterina};
+            collection.Collection.Add(level);
+            LevelsModel.Instance.levels = collection;
+
+
+            string s = JsonUtility.ToJson(collection, true);
+            using (StreamWriter writer = new StreamWriter(LevelsModel.LevelsPath, false))
+            {
+                writer.Write(s);
+            }
+
+        }
+
+        [MenuItem("zm.LevelssCollection/Deserialize")]
+        public static void DeserializeLevel()
+        {
+            LevelsModel.Instance.Initialize();
+
+        }
 
 		#endregion Menu Items
 	}

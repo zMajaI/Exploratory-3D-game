@@ -34,3 +34,50 @@ MainScene:
 
 SCALING of UI canvas/ maybe to have centered everything, and then just background image? Camera - depth only? Clear flags? Background image?
 
+
+
+Question -> category
+
+Level -> array of categories, doesn't serialize array of questions - it's done when level is loaded, question can be changed
+	  -> array of all possible positions
+	  -> name
+	  -> max number of questions
+	  
+	  
+Load level: Initialize Level object with questions from all categories, return array of questions with positions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
