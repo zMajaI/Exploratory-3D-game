@@ -47,10 +47,20 @@ Level -> array of categories, doesn't serialize array of questions - it's done w
 Load level: Initialize Level object with questions from all categories, return array of questions with positions
 
 
+Leaderboard - settinfgs mouse click
 
 
 
+MainController
+-inicijalizuje LevelModel
+-inicijalizuje MainModel
 
+ko drzi glavnom usera? Da to radi UserModel? Da on ima listu korisnika? Da li mi je potreban main model? 
+Da li da main model radi sve to sa korisnicima? 
+Svaki level drzi listu korisnika? Koji su ga igrali? 
+
+
+ko drzi listu korisnika?
 
 
 

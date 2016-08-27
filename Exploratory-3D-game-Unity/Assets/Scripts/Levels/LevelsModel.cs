@@ -1,56 +1,72 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.IO;
+using System.Linq;
+using UnityEngine;
+using zm.Questioning;
 using zm.Util;
-using System.IO;
+
 namespace zm.Levels
 {
-    public class LevelsModel : GenericSingleton<LevelsModel>
-    {
-        #region Constants
+	public class LevelsModel : GenericSingleton<LevelsModel>
+	{
+		#region Constants
 
-        /// <summary>
-        /// Path of directory that holds all serialized levels as individual files
-        /// </summary>
-        public static readonly string LevelsPath = Application.streamingAssetsPath + "/levels.txt"; //TODO: private
+		/// <summary>
+		/// Path of directory that holds all serialized levels as individual files
+		/// </summary>
+		public static readonly string LevelsPath = Application.streamingAssetsPath + "/levels.txt"; //TODO: private
 
-        #endregion Constants
+		#endregion Constants
 
-        #region Fields and Properties
+		#region Fields and Properties
 
-        /// <summary>
-        /// List of all levels that exist in this game. 
-        /// </summary>
-        public LevelsCollection levels; //TODO swith this to be private
+		/// <summary>
+		/// List of all levels that exist in this game.
+		/// </summary>
+		public LevelsCollection levels; //TODO switch this to be private
 
-        #endregion Fields and Properties
+		/// <summary>
+		/// Returns Collection of all levels that exist.
+		/// </summary>
+		public LevelsCollection Levels
+		{
+			get { return levels; }
+		}
 
-        #region Public Methods
+		/// <summary>
+		/// Level that is currently selected.
+		/// </summary>
+		public Level CurrentLevel;
 
-        /// <summary>
-        /// Initialize LevelsModel, populate all levels data.
-        /// </summary>
-        public void Initialize()
-        {
-            using (StreamReader reader = new StreamReader(LevelsPath))
-            {
-                levels = JsonUtility.FromJson<LevelsCollection>(reader.ReadToEnd());
-            }
-        }
+		#endregion Fields and Properties
 
+		#region Public Methods
 
-        public void LoadLevel(int id)
-        {
-            for (int i = 0; i < levels.Collection.Count; i++)
-            {
-                Level level = levels.Collection[i];
-                if (level.Id == id)
-                {
-                    levels.Collection[i].InitializeQuestions(Questioning.QuestionsModel.Instance.GetQuestions(level.Categories));
-                }
-            }
-        }
+		/// <summary>
+		/// Initialize LevelsModel, populate all levels data.
+		/// </summary>
+		public void Initialize()
+		{
+			using (StreamReader reader = new StreamReader(LevelsPath))
+			{
+				levels = JsonUtility.FromJson<LevelsCollection>(reader.ReadToEnd());
+			}
 
-        #endregion Public Methods
+			if (CurrentLevel == null)
+			{
+				CurrentLevel = Levels.Collection.First();
+			}
+		}
 
-    }
+		/// <summary>
+		/// Loads all necessary data for current level.
+		/// This is done before scene is loaded, so all data will be prepared for populating scene.
+		/// </summary>
+		public void LoadCurrentLevel()
+		{
+			CurrentLevel.InitializeQuestions(QuestionsModel.Instance.GetQuestions(CurrentLevel.Categories));
+			
+		}
+
+		#endregion Public Methods
+	}
 }

@@ -37,6 +37,7 @@ namespace zm.Util.EditorTools
             v3c.Collection.AddRange(new List<Vector3> { Vector3.zero, Vector3.up });
             level.Positions = v3c;
             level.MaxNumQuestions = 10;
+	        level.Name = "Nikola";
             level.Categories = new QuestionCategory[]{QuestionCategory.Fruits, QuestionCategory.PizdaMaterina};
             collection.Collection.Add(level);
             LevelsModel.Instance.levels = collection;

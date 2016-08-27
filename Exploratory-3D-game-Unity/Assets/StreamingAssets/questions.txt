@@ -149,15 +149,6 @@
             "Id": 1,
             "AudioPath": "audio",
             "Points": 100
-        },
-        {
-            "Category": 1,
-            "TimeLimit": 0,
-            "Text": "MAja",
-            "Answers": [],
-            "Id": 1,
-            "AudioPath": "",
-            "Points": 0
         }
     ]
 }

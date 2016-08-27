@@ -1,4 +1,5 @@
 ﻿using UnityEngine.SceneManagement;
+using zm.Levels;
 
 namespace zm.Common
 {
@@ -12,6 +13,12 @@ namespace zm.Common
 		public static void LoadQuestions()
 		{
 			SceneManager.LoadScene("Questions");
+		}
+
+		public static void LoadLevel()
+		{
+			LevelsModel.Instance.LoadCurrentLevel();
+			SceneManager.LoadScene("Level");
 		}
 	}
 }

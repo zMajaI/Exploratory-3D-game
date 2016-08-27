@@ -1,76 +1,99 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using zm.Questioning;
-using zm.Util;
 using zm.Common;
+using zm.Questioning;
+using zm.Users;
+using zm.Util;
 
 namespace zm.Levels
 {
-    [Serializable]
-    public class Level
-    {
-        #region Fields and Properties
+	[Serializable]
+	public class Level
+	{
+		#region Constants
 
-        /// <summary>
-        /// Used for generating unique ids for this class.
-        /// </summary>
-        private static int IdGen = 0;
+		private static readonly string ImgsPath = "Sprites/Levels/";
 
-        public int Id { get; private set; }
+		#endregion Constants
 
-        /// <summary>
-        /// All question that user can answer in this level.
-        /// Mapped by category: Category --> List<Questions>
-        /// </summary>
-        private Dictionary<QuestionCategory,List<Question>> questions;
+		#region Constructor
 
-        /// <summary>
-        /// List of all possible positions for this level.
-        /// </summary>
-        public Vector3Collection Positions;
+		public Level()
+		{
+			Id = ++IdGen;
+		}
 
-        /// <summary>
-        /// Maximal number of questions that can be active in one moment in game.
-        /// </summary>
-        public int MaxNumQuestions;
+		#endregion Constructor
 
-        /// <summary>
-        /// All categories from which we can take questions.
-        /// </summary>
-        public QuestionCategory[] Categories;
+		#region Fields and Properties
 
-        #endregion Fields and Properties
+		/// <summary>
+		/// Used for generating unique ids for this class.
+		/// </summary>
+		private static int IdGen;
 
-        #region Constructor
+		public int Id { get; private set; }
 
-        public Level()
-        {
-            this.Id = ++IdGen;
-        }
+		/// <summary>
+		/// All question that user can answer in this level.
+		/// Mapped by category: Category --> List<Questions>
+		/// </summary>
+		private Dictionary<QuestionCategory, List<Question>> questions;
 
-        #endregion Constructor
+		/// <summary>
+		/// List of all possible positions for this level.
+		/// </summary>
+		public Vector3Collection Positions;
 
-        #region Public Methods
+		/// <summary>
+		/// Maximal number of questions that can be active in one moment in game.
+		/// </summary>
+		public int MaxNumQuestions;
 
-        /// <summary>
-        /// Returns random question for passed category.
-        /// </summary>
-        public Question GetQuestion(QuestionCategory category)
-        {
-            return questions[category].GetRandom();
-        }
+		/// <summary>
+		/// All categories from which we can take questions.
+		/// </summary>
+		public QuestionCategory[] Categories;
 
-        /// <summary>
-        /// Initialize all questions for this level.
-        /// </summary>
-        /// <param name="questions"></param>
-        public void InitializeQuestions(Dictionary<QuestionCategory, List<Question>> questions)
-        {
-            this.questions = questions;
-        }
+		/// <summary>
+		/// Name that will be displayed for this level.
+		/// </summary>
+		public string Name;
 
-        #endregion Public Methods
+		/// <summary>
+		/// Return path for image that represents this level.
+		/// </summary>
+		public string ImgPath
+		{
+			get { return ImgsPath + Name; }
+		}
 
-    }
+		/// <summary>
+		/// Holds collection of all users that played this level. 
+		/// </summary>
+		public UsersCollection Users;
+ 
+		#endregion Fields and Properties
+
+		#region Public Methods
+
+		/// <summary>
+		/// Returns random question for passed category.
+		/// </summary>
+		public Question GetQuestion(QuestionCategory category)
+		{
+			return questions[category].GetRandom();
+		}
+
+		/// <summary>
+		/// Initialize all questions for this level.
+		/// </summary>
+		/// <param name="questions"></param>
+		public void InitializeQuestions(Dictionary<QuestionCategory, List<Question>> questions)
+		{
+			this.questions = questions;
+		}
+
+		#endregion Public Methods
+	}
 }

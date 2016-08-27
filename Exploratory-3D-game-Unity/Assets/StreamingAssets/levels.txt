@@ -1,11 +1,8 @@
 {
     "Collection": [
         {
-            "Questions": {
-                "Collection": []
-            },
             "Positions": {
-                "Positions": [
+                "Collection": [
                     {
                         "x": 0.0,
                         "y": 0.0,
@@ -22,7 +19,30 @@
             "Categories": [
                 0,
                 2
-            ]
+            ],
+            "Name": "Nikola"
+        },
+		{
+            "Positions": {
+                "Collection": [
+                    {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    {
+                        "x": 0.0,
+                        "y": 1.0,
+                        "z": 0.0
+                    }
+                ]
+            },
+            "MaxNumQuestions": 10,
+            "Categories": [
+                0,
+                2
+            ],
+            "Name": "Nikola"
         }
     ]
 }

@@ -5,24 +5,27 @@ namespace zm.Main
 {
 	public class MainController : MonoBehaviour
 	{
+		#region MonoBehaviour Methods
+
+		private void Start()
+		{
+			Model.Initialize();
+			UI.Initialize(Model.Levels, OnClickLevelRenderer, Model.CurrentlySelectedLevel, Model.CurrentUser);
+		}
+
+		#endregion MonoBehaviour Methods
+
 		#region Fields and Properties
 
 		[SerializeField]
 		private MainUI UI;
 
-        private static MainModel Model
-        {
-            get { return MainModel.Instance; }
-        }
+		private static MainModel Model
+		{
+			get { return MainModel.Instance; }
+		}
 
 		#endregion Fields and Properties
-
-		#region MonoBehaviour Methods
-
-		// Use this for initialization
-		private void Start() {}
-
-		#endregion MonoBehaviour Methods
 
 		#region Event Handlers
 
@@ -38,37 +41,55 @@ namespace zm.Main
 			UI.ShowPasswordComponent();
 		}
 
-        /// <summary>
-        /// Handler for starting game. Loads selected level.
-        /// </summary>
-        public void OnClickBtnStart()
-        {
+		/// <summary>
+		/// Handler for starting game. Loads selected level.
+		/// </summary>
+		public void OnClickBtnStart()
+		{
+			Model.CreateUser(UI.UserName);
+			SceneNavigation.LoadLevel();
+		}
 
-        }
+		/// <summary>
+		/// Handler for logging into question screen.
+		/// </summary>
+		public void OnClickBtnLogin()
+		{
+			if (Model.IsPasswordValid(UI.Password))
+			{
+				UI.ClosePasswordComponent();
+				SceneNavigation.LoadQuestions();
+			}
+		}
 
-        /// <summary>
-        /// Handler for logging into question screen.
-        /// </summary>
-        public void OnClickBtnLogin()
-        {
-            if (Model.IsPasswordValid(UI.PasswordComponent.Password))
-            {
-                UI.ClosePasswordComponent();
-                SceneNavigation.LoadQuestions();
-            }
-            else
-            {
-                // Display information that password is not valid
-            }
-        }
+		/// <summary>
+		/// Handler for closing Password component without validation.
+		/// </summary>
+		public void OnClickBtnClosePasswordComponent()
+		{
+			UI.ClosePasswordComponent();
+		}
 
-        /// <summary>
-        /// Handler for closing Password component without validation.
-        /// </summary>
-        public void OnClickBtnClosePasswordComponent()
-        {
-            UI.ClosePasswordComponent();
-        }
+		/// <summary>
+		/// Handler that should be triggered when 
+		/// </summary>
+		/// <param name="renderer"></param>
+		private void OnClickLevelRenderer(LevelPreviewRenderer renderer)
+		{
+			if (renderer.Level != Model.CurrentlySelectedLevel)
+			{
+				Model.CurrentlySelectedLevel = renderer.Level;
+				UI.SelectLevel(Model.CurrentlySelectedLevel);
+			}
+		}
+
+		/// <summary>
+		/// Handler that will be triggered when ever user changes his/her name in input component.
+		/// </summary>
+		public void OnEditEndUserNameInput()
+		{
+			Model.CreateUser(UI.UserName);
+		}
 
 		#endregion  Event Handlers
 	}

@@ -1,23 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections.Generic;
-using System;
 
 [Serializable]
 public abstract class GenericSerializableCollection<T>
 {
+	#region Fields and Properties
 
-    #region Fields and Properties
+	public List<T> Collection;
 
-    public List<T> Collection;
+	#endregion Fields and Properties
 
-    #endregion Fields and Properties
+	#region Constructor
 
-    #region Constructor
+	protected GenericSerializableCollection()
+	{
+		Collection = new List<T>();
+	}
 
-    public GenericSerializableCollection()
-    {
-        Collection = new List<T>();
-    }
-
-    #endregion Constructor
+	#endregion Constructor
 }
