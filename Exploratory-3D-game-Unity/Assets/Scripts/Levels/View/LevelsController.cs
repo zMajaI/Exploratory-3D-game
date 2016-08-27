@@ -6,7 +6,6 @@ namespace zm.Levels
 {
 	public class LevelsController : MonoBehaviour
 	{
-
 		#region Fields and Properties
 
 		private LevelsModel Model
@@ -22,13 +21,23 @@ namespace zm.Levels
 		#region MonoBehaviour Methods
 
 		// Use this for initialization
-		private void Start()
-		{
-			
-		}
+		private void Start() {}
 
 		// Update is called once per frame
-		private void Update() {} //TODO check if this will be needed for time countdown
+		private void Update()
+		{
+			if (Input.GetKeyUp("p"))
+			{
+				if (UI.PauseMenuShown)
+				{
+					UI.ClosePauseMenu();
+				}
+				else
+				{
+					UI.ShowPauseMenu();
+				}
+			}
+		} //TODO check if this will be needed for time countdown
 
 		#endregion MonoBehaviour Methods
 
@@ -52,20 +61,9 @@ namespace zm.Levels
 		}
 
 		/// <summary>
-		/// Handler click for pause button. 
+		/// Handler for click on answer in question menu.
 		/// </summary>
-		public void OnClickBtnPause()
-		{
-			UI.ShowPauseMenu();
-		}
-
-		/// <summary>
-		/// Handler for click on answer in question menu. 
-		/// </summary>
-		public void OnClickAnswer(Answer answer)
-		{
-			
-		}
+		public void OnClickAnswer(Answer answer) {}
 
 		#endregion  Event Handlers
 	}
