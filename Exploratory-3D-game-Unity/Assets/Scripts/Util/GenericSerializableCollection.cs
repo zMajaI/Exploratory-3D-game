@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 
-[Serializable]
-public abstract class GenericSerializableCollection<T>
+namespace zm.Util
 {
-	#region Fields and Properties
-
-	public List<T> Collection;
-
-	#endregion Fields and Properties
-
-	#region Constructor
-
-	protected GenericSerializableCollection()
+	[Serializable]
+	public abstract class GenericSerializableCollection<T>
 	{
-		Collection = new List<T>();
-	}
+		#region Fields and Properties
 
-	#endregion Constructor
+		public List<T> Collection;
+
+		#endregion Fields and Properties
+
+		#region Constructor
+
+		protected GenericSerializableCollection()
+		{
+			Collection = new List<T>();
+		}
+
+		#endregion Constructor
+	}
 }

@@ -54,6 +54,11 @@ namespace zm.Questioning
         /// </summary>
         public List<string> Categories { get; private set; }
 
+		/// <summary>
+		/// Flag indicating if this model is initialized.
+		/// </summary>
+		private bool initialized;
+
         #endregion Fields and Properties
 
         #region Public Methods
@@ -64,6 +69,9 @@ namespace zm.Questioning
         /// </summary>
         public void Initialize()
         {
+			if (initialized) return;
+
+			initialized = true;
             using (StreamReader reader = new StreamReader(QuestionsPath))
             {
                 questionsCollection = JsonUtility.FromJson<QuestionsCollection>(reader.ReadToEnd());

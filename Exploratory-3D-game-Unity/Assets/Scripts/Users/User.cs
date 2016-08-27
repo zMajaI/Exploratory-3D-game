@@ -42,6 +42,11 @@ namespace zm.Users
 		/// </summary>
 		public string LevelName;
 
+		/// <summary>
+		/// Number of questions that user had opportunity to answer.
+		/// </summary>
+		public int NumOfAnsweredQuestions;
+
 		#endregion Fields and Properties
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using zm.Common;
 using zm.Levels;
 using zm.Users;
 using zm.Util;
@@ -24,6 +25,9 @@ namespace zm.Main
 
 		[SerializeField]
 		private InputField inputUsername;
+
+		[SerializeField]
+		public MainAlerPopup MainAlerPopup;
 
 		#endregion Prefabs
 

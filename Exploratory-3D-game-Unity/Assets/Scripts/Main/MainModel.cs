@@ -40,6 +40,11 @@ namespace zm.Main
 			set { LevelsModel.Instance.CurrentLevel = value; }
 		}
 
+		/// <summary>
+		/// Flag indicating if this model is initialized.
+		/// </summary>
+		private bool initialized;
+
 		#endregion Fields and Properties
 
 		#region Public Methods
@@ -57,6 +62,9 @@ namespace zm.Main
 		/// </summary>
 		public void Initialize()
 		{
+			if(initialized) return;
+
+			initialized = true;
 			LevelsModel.Instance.Initialize();
 		}
 

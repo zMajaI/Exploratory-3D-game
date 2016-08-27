@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using zm.Common;
+using zm.Main;
 using zm.Questioning;
+using zm.Util;
 
 namespace zm.Levels
 {
@@ -16,12 +18,18 @@ namespace zm.Levels
 		[SerializeField]
 		private LeveslUI UI;
 
+		[SerializeField]
+		private Timer timer;
+
 		#endregion Fields and Properties
 
 		#region MonoBehaviour Methods
 
 		// Use this for initialization
-		private void Start() {}
+		private void Start()
+		{
+			UI.Initialize(Model.CurrentLevel, MainModel.Instance.CurrentUser);
+		}
 
 		// Update is called once per frame
 		private void Update()
@@ -37,7 +45,9 @@ namespace zm.Levels
 					UI.ShowPauseMenu();
 				}
 			}
-		} //TODO check if this will be needed for time countdown
+
+
+		}
 
 		#endregion MonoBehaviour Methods
 

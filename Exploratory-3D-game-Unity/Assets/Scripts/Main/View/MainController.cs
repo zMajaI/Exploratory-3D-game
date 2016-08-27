@@ -60,6 +60,10 @@ namespace zm.Main
 				UI.ClosePasswordComponent();
 				SceneNavigation.LoadQuestions();
 			}
+			else
+			{
+				UI.MainAlerPopup.Show("Wrong Password!\nTry again!");
+			}
 		}
 
 		/// <summary>

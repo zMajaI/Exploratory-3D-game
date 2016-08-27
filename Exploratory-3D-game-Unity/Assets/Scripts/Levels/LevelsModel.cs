@@ -37,6 +37,11 @@ namespace zm.Levels
 		/// </summary>
 		public Level CurrentLevel;
 
+		/// <summary>
+		/// Flag indicating if this model is initialized.
+		/// </summary>
+		private bool initialized;
+
 		#endregion Fields and Properties
 
 		#region Public Methods
@@ -46,15 +51,15 @@ namespace zm.Levels
 		/// </summary>
 		public void Initialize()
 		{
+			if (initialized) { return; }
+
+			initialized = true;
 			using (StreamReader reader = new StreamReader(LevelsPath))
 			{
 				levels = JsonUtility.FromJson<LevelsCollection>(reader.ReadToEnd());
 			}
 
-			if (CurrentLevel == null)
-			{
-				CurrentLevel = Levels.Collection.First();
-			}
+			CurrentLevel = Levels.Collection.First();
 		}
 
 		/// <summary>
@@ -64,7 +69,6 @@ namespace zm.Levels
 		public void LoadCurrentLevel()
 		{
 			CurrentLevel.InitializeQuestions(QuestionsModel.Instance.GetQuestions(CurrentLevel.Categories));
-			
 		}
 
 		#endregion Public Methods
