@@ -1,71 +1,13 @@
-Parsing questions and displaying them
-Determine if you could use UI unity, without creating additional support 
-Create UI for each screen
-Create 3D ground with interaction
-Audio support
-Create way for storing new questions, audio etc - they shouuld be packed separetly?
+-object on Level scene that are enabled for interaction whit user, some animation when user comes close enough, raycast from the wand
+-display question, register points, timer for count down
+-how will we do updating of which questions are answered etc.
+-detect end game - when user answers on last question
 
+End Screen
+Leaderboards Screen
 
-QuestionUI
-- holds UI for question scene
-QuestionController
-- communicates with Model and populates View
-QuestionModel
-- communicates with file and provides load/store options 
-Do I need Controller? 
-
-MainUI
-- holds all elements from login screen: selection of game level, saving user id, display of liderboards? 
-MainController
-- performes loading of level.
-
-
-
-Questions:
-- scroll bar - just to add support for more than three answers
-- scroll bar for editable questions
-- add all needed fields for answer and question: fields that user can edit
-- when user clicks close button - ask for saving changes? 
-- add audio support :/
-- add check if everything is okay when editing questions
-
-MainScene:
--leaderboards, filtereing - model for leaderboards 
-
-SCALING of UI canvas/ maybe to have centered everything, and then just background image? Camera - depth only? Clear flags? Background image?
-
-
-
-Question -> category
-
-Level -> array of categories, doesn't serialize array of questions - it's done when level is loaded, question can be changed
-	  -> array of all possible positions
-	  -> name
-	  -> max number of questions
-	  
-	  
-Load level: Initialize Level object with questions from all categories, return array of questions with positions
-
-
-Leaderboard - settinfgs mouse click
-
-
-
-MainController
--inicijalizuje LevelModel
--inicijalizuje MainModel
-
-ko drzi glavnom usera? Da to radi UserModel? Da on ima listu korisnika? Da li mi je potreban main model? 
-Da li da main model radi sve to sa korisnicima? 
-Svaki level drzi listu korisnika? Koji su ga igrali? 
-
-
-ko drzi listu korisnika?
-
-
-
-
-
+Sack audio and Sack setting button - no need for that
+Write draft for Zorz to see how are you doing
 
 
 

@@ -20,5 +20,15 @@ namespace zm.Common
 			LevelsModel.Instance.LoadCurrentLevel();
 			SceneManager.LoadScene("Level");
 		}
+
+		public static void LoadEnd()
+		{
+			SceneManager.LoadScene("End");
+		}
+
+		public static void LoadLeaderboards()
+		{
+			SceneManager.LoadScene("Leaderboards");
+		}
 	}
 }
