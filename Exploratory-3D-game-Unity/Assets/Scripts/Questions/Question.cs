@@ -47,7 +47,7 @@ namespace zm.Questioning
 		public QuestionCategory Category;
 
 		/// <summary>
-		/// Time limit  for this question, in milliseconds.
+		/// Time limit  for this question, in seconds.
 		/// </summary>
 		public long TimeLimit;
 

@@ -34,12 +34,19 @@ namespace zm.Levels
 			//Check if this is end game
 			if (MainModel.Instance.CurrentUser.NumOfAnsweredQuestions == Model.CurrentLevel.NumOfQuestions)
 			{
-				//TODO endgame
-				UI.ShowCursor();
-				SceneNavigation.LoadMain();
+				EndGame();
 			}
 
 			currentQuestion = null;
+		}
+
+		/// <summary>
+		/// Finish this game, either by answering all questions or by quitting. 
+		/// </summary>
+		private void EndGame()
+		{
+			Model.AddUser(MainModel.Instance.CurrentUser);
+			UI.ShowEndGame(MainModel.Instance.CurrentUser, Model.CurrentLevel);
 		}
 
 		#endregion Private Methods
@@ -73,7 +80,11 @@ namespace zm.Levels
 		private void LateUpdate()
 		{
 			// If user is currently answering some question we should skip all activities. :)
-			if (currentQuestion != null) { return; }
+			if (currentQuestion != null)
+			{
+				UI.UpdateTime(timer.TimeLeft);
+				return;
+			}
 
 			// Handle Key input for pause menu
 			if (Input.GetKeyUp("p"))
@@ -94,6 +105,7 @@ namespace zm.Levels
 				currentQuestion = UI.GetHitQuestion();
 				if (currentQuestion != null)
 				{
+					timer.StartTicking(currentQuestion.TimeLimit, () => OnClickAnswer(null));
 					UI.ShowQuestion(currentQuestion, OnClickAnswer);
 				}
 			}
@@ -116,8 +128,7 @@ namespace zm.Levels
 		/// </summary>
 		public void OnClickBtnQuit()
 		{
-			//TODO load end screen
-			SceneNavigation.LoadMain();
+			EndGame();
 		}
 
 		/// <summary>
@@ -125,6 +136,8 @@ namespace zm.Levels
 		/// </summary>
 		public void OnClickAnswer(Answer answer)
 		{
+			timer.StopTicking();
+
 			if (answer == null)
 			{
 				UI.MainAlerPopup.Show("Time is up!\nHurry up next time!", CloseAnswerInfo);
@@ -138,6 +151,23 @@ namespace zm.Levels
 			{
 				UI.MainAlerPopup.Show("Wrong!\nYour answer wasn't correct!", CloseAnswerInfo);
 			}
+		}
+
+		/// <summary>
+		/// Handler for click on button Main Menu in end game component. 
+		/// </summary>
+		public void OnClickBtnMainMenu()
+		{
+			SceneNavigation.LoadMain();
+		}
+
+		/// <summary>
+		/// Handler for click on button Replay in end game component.
+		/// </summary>
+		public void OnBtnClickReplay()
+		{
+			MainModel.Instance.CreateUser(MainModel.Instance.CurrentUser.Name);
+			SceneNavigation.LoadLevel();
 		}
 
 		#endregion  Event Handlers

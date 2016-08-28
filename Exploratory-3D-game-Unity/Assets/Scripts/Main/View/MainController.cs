@@ -29,9 +29,13 @@ namespace zm.Main
 
 		#region Event Handlers
 
-		public void OnClickBtnLeaderboards() {}
-
-		public void OnClickBtnSettings() {}
+		/// <summary>
+		/// Handler for click on Leaderboards button.
+		/// </summary>
+		public void OnClickBtnLeaderboards()
+		{
+			SceneNavigation.LoadLeaderboards();
+		}
 
 		/// <summary>
 		/// Handler for click on questions button.
@@ -75,7 +79,7 @@ namespace zm.Main
 		}
 
 		/// <summary>
-		/// Handler that should be triggered when 
+		/// Handler that should be triggered when
 		/// </summary>
 		/// <param name="renderer"></param>
 		private void OnClickLevelRenderer(LevelPreviewRenderer renderer)

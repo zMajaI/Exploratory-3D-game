@@ -94,6 +94,11 @@ namespace zm.Levels
 		public int NumOfQuestions { get; private set; }
 
 		/// <summary>
+		/// Represents maximal number of points that user can gain during this level.
+		/// </summary>
+		public int MaxPoints { get; private set; }
+
+		/// <summary>
 		/// Available positions for questions on this level.
 		/// </summary>
 		private List<Vector3> availablePositions;
@@ -126,6 +131,11 @@ namespace zm.Levels
 		{
 			this.questions = questions;
 			NumOfQuestions = questions.Count;
+			MaxPoints = 0;
+			foreach (Question question in questions)
+			{
+				MaxPoints += question.Points;
+			}
 			availablePositions = new List<Vector3>(Positions.Collection);
 		}
 

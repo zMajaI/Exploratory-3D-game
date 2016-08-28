@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using zm.Questioning;
+using zm.Users;
 using zm.Util;
 
 namespace zm.Levels
@@ -17,6 +18,22 @@ namespace zm.Levels
 		public static readonly string LevelsPath = Application.streamingAssetsPath + "/levels.txt"; //TODO: private
 
 		#endregion Constants
+
+		#region Private Methods
+
+		/// <summary>
+		/// Serialize all levels from collection. To ensure that new users will be saved.
+		/// </summary>
+		private void SaveLevels()
+		{
+			string s = JsonUtility.ToJson(levels, true);
+			using (StreamWriter writer = new StreamWriter(LevelsPath, false))
+			{
+				writer.Write(s);
+			}
+		}
+
+		#endregion Private Methods
 
 		#region Fields and Properties
 
@@ -72,11 +89,36 @@ namespace zm.Levels
 			QuestionsModel.Instance.Initialize();
 
 			List<Question> questions = new List<Question>();
- 			foreach (var category in CurrentLevel.Categories)
+			foreach (var category in CurrentLevel.Categories)
 			{
 				questions.AddRange(QuestionsModel.Instance.GetQuestions(category));
 			}
 			CurrentLevel.InitializeQuestions(questions);
+		}
+
+		/// <summary>
+		/// Adds user to current level. If user already exists and has smaller score this will overwrite it.
+		/// </summary>
+		/// <param name="currentUser"></param>
+		public void AddUser(User currentUser)
+		{
+			List<User> users = CurrentLevel.Users.Collection;
+			foreach (User user in users)
+			{
+				if (user.Name.Equals(currentUser.Name))
+				{
+					if (user.Points < currentUser.Points)
+					{
+						user.Points = currentUser.Points;
+						SaveLevels();
+					}
+					return;
+				}
+			}
+
+			// This user doesn't exist in list of users
+			CurrentLevel.Users.Collection.Add(currentUser);
+			SaveLevels();
 		}
 
 		#endregion Public Methods

@@ -11,12 +11,12 @@ namespace zm.Util
 		{
 			if (!started) { return; }
 
-			timeLeft -= Time.deltaTime;
-			if (timeLeft <= 0)
+			TimeLeft -= Time.deltaTime;
+			if (TimeLeft <= 0)
 			{
 				// If timer reached 0, stop it and trigger onFinished
-				StopTicking();
 				onFinished();
+				StopTicking();
 			}
 		}
 
@@ -26,7 +26,7 @@ namespace zm.Util
 
 		public void StartTicking(float time, Action callback)
 		{
-			timeLeft = time;
+			TimeLeft = time;
 			onFinished = callback;
 			started = true;
 		}
@@ -34,7 +34,7 @@ namespace zm.Util
 		public void StopTicking()
 		{
 			started = false;
-			timeLeft = 0;
+			TimeLeft = 0;
 			onFinished = null;
 		}
 
@@ -45,7 +45,7 @@ namespace zm.Util
 		/// <summary>
 		/// Time left until timer finishes it's counting.
 		/// </summary>
-		private float timeLeft;
+		public float TimeLeft { get; private set; }
 
 		/// <summary>
 		/// Flag indicating if timer started.

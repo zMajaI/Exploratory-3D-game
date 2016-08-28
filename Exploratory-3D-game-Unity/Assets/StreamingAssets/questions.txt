@@ -2,7 +2,7 @@
     "Collection": [
         {
             "Category": 2,
-            "TimeLimit": 60,
+            "TimeLimit": 3,
             "Text": "Where is Hogwarts located?",
             "Answers": [
                 {
@@ -29,7 +29,7 @@
         },
         {
             "Category": 2,
-            "TimeLimit": 60,
+            "TimeLimit": 3,
             "Text": "When is Hogwarts built?",
             "Answers": [
                 {
@@ -56,7 +56,7 @@
         },
         {
             "Category": 0,
-            "TimeLimit": 60,
+            "TimeLimit": 3,
             "Text": "What is spell for light?",
             "Answers": [
                 {
@@ -83,7 +83,7 @@
         },
         {
             "Category": 0,
-            "TimeLimit": 60,
+            "TimeLimit": 3,
             "Text": "What is spell for levitation? ",
             "Answers": [
                 {
@@ -110,7 +110,7 @@
         },
         {
             "Category": 1,
-            "TimeLimit": 60,
+            "TimeLimit": 3,
             "Text": "What is potion for changing looks?",
             "Answers": [
                 {
@@ -137,7 +137,7 @@
         },
         {
             "Category": 1,
-            "TimeLimit": 60,
+            "TimeLimit": 3,
             "Text": "What is potion for werewolves?",
             "Answers": [
                 {

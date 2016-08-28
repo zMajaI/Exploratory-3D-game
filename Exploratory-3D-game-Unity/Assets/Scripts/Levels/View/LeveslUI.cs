@@ -70,6 +70,19 @@ namespace zm.Levels
 			get { return pauseMenu.gameObject.activeInHierarchy; }
 		}
 
+		#region End Game
+
+		[SerializeField]
+		private Text lblUserNameEndGame;
+
+		[SerializeField]
+		private Text lblPointsEndGame;
+
+		[SerializeField]
+		private GameObject endGameComponent;
+
+		#endregion End Game
+
 		#endregion Fields and Properties
 
 		#region Public Methods
@@ -126,8 +139,13 @@ namespace zm.Levels
 				answerRenderer.Initialize(answer, onClickAnswerHandler);
 				answerRenderer.transform.SetParent(lstAnswers.transform, false);
 			}
-
+			UpdateTime(question.TimeLimit);
 			ShowCursor();
+		}
+
+		public void UpdateTime(float time)
+		{
+			lblTimer.text = (Math.Round(time) < 0 ? 0 : Math.Round(time)).ToString();
 		}
 
 		public void HideQuestion()
@@ -171,14 +189,12 @@ namespace zm.Levels
 					if (view == null)
 					{
 						view = hit.transform.gameObject.GetComponentInParent<QuestionableObjectView>();
-						
 					}
 
 					if (view.IsTriggered)
 					{
 						question = view.Question;
 					}
-					
 				}
 			}
 
@@ -186,19 +202,30 @@ namespace zm.Levels
 		}
 
 		/// <summary>
+		/// Display end game component with basic information from last game.
+		/// </summary>
+		public void ShowEndGame(User user, Level level)
+		{
+			lblUserNameEndGame.text = user.Name;
+			lblPointsEndGame.text = "Points: " + user.Points + "/" + level.MaxPoints;
+			endGameComponent.gameObject.SetActive(true);
+			ShowCursor();
+		}
+
+		#endregion Public Methods
+
+		#region Private Methods
+
+		/// <summary>
 		/// Unlocks cursor and disables player controller.
 		/// </summary>
-		public void ShowCursor()
+		private void ShowCursor()
 		{
 			fpController.enabled = false;
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
 			fpController.m_MouseLook.lockCursor = false;
 		}
-
-		#endregion Public Methods
-
-		#region Private Methods
 
 		private void HideCursor()
 		{

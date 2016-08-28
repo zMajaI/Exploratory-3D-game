@@ -53,7 +53,20 @@
             ],
             "Name": "Harry Potter",
             "Users": {
-                "Collection": []
+                "Collection": [
+                    {
+                        "Points": 10,
+                        "Name": "",
+                        "LevelName": "Harry Potter",
+                        "NumOfAnsweredQuestions": 1
+                    },
+                    {
+                        "Points": 0,
+                        "Name": "",
+                        "LevelName": "Harry Potter",
+                        "NumOfAnsweredQuestions": 0
+                    }
+                ]
             }
         }
     ]
