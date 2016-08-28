@@ -81,7 +81,7 @@ namespace zm.Questioning
 		{
 			List<Question> questions = Model.GetQuestions(UI.SelectedCategory);
 			UI.UpdateQuestionsDropDown(questions);
-			UI.UpdateQuestionView(questions.IsEmpty() ? null : questions[0]);
+			UI.UpdateQuestionView(questions.IsEmpty() ? null : questions[newValue]);
 		}
 
 		/// <summary>
@@ -115,7 +115,7 @@ namespace zm.Questioning
 			// Close editable question and update view
 			OnClickBtnCloseEditableQuestion();
 			OnValueChangedQuestion();
-			OnValueChangedCategory();
+			OnValueChangedCategory(UI.SelectedQuestion);
 		}
 
 		/// <summary>

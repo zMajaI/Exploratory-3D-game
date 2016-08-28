@@ -65,6 +65,12 @@
                         "Name": "Harry Potter",
                         "LevelName": "Harry Potter",
                         "NumOfAnsweredQuestions": 24
+                    },
+                    {
+                        "Points": 70,
+                        "Name": "zMaja",
+                        "LevelName": "Harry Potter",
+                        "NumOfAnsweredQuestions": 10
                     }
                 ]
             }
