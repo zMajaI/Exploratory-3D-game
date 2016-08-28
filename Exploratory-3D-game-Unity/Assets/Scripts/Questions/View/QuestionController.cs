@@ -15,7 +15,7 @@ namespace zm.Questioning
 		private void Start()
 		{
 			Model.Initialize();
-			UI.InitializeView(Model.GetQuestions(QuestionCategory.Fruits), Model.Categories);
+			UI.InitializeView(Model.GetQuestions(QuestionCategory.Spells), Model.Categories);
 		}
 
 		#endregion MonoBehaviour Methods

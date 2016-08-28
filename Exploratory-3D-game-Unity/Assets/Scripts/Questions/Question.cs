@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace zm.Questioning
 {
@@ -13,19 +14,23 @@ namespace zm.Questioning
 	{
 		#region Constructor
 
-		private Question(QuestionCategory category, long timeLimit, string text, List<Answer> answers, string audioPath, int points)
+		private Question(QuestionCategory category, long timeLimit, string text, List<Answer> answers, string audioPath, int points): this()
 		{
 			Category = category;
 			TimeLimit = timeLimit;
 			Text = text;
 			Answers = answers;
-			Id = ++IdGen;
 			AudioPath = audioPath;
 			Points = points;
 		}
 
 		public Question(QuestionCategory category)
 			: this(category, 0L, "", new List<Answer>(), "", 0) {}
+
+		public Question()
+		{
+			Id = ++IdGen;
+		}
 
 		#endregion Constructor
 
@@ -59,7 +64,7 @@ namespace zm.Questioning
 		/// <summary>
 		/// Each question has unique id. It's used for load/store operations.
 		/// </summary>
-		public int Id;
+		public int Id { get; private set; }
 
 		/// <summary>
 		/// Path to Audio source for this question.
@@ -71,13 +76,19 @@ namespace zm.Questioning
 		/// </summary>
 		public int Points;
 
+		/// <summary>
+		/// Current position for this question.
+		/// </summary>
+		public Vector3 Position { get; set; }
+
 		#endregion Field and Properties
+
 	}
 
 	public enum QuestionCategory
 	{
-		Fruits = 0,
-		Vegetables,
-		PizdaMaterina
+		Spells = 0,
+		Potions,
+		Hogwarts
 	}
 }

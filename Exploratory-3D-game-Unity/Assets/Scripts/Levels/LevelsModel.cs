@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using zm.Questioning;
@@ -68,7 +69,14 @@ namespace zm.Levels
 		/// </summary>
 		public void LoadCurrentLevel()
 		{
-			CurrentLevel.InitializeQuestions(QuestionsModel.Instance.GetQuestions(CurrentLevel.Categories));
+			QuestionsModel.Instance.Initialize();
+
+			List<Question> questions = new List<Question>();
+ 			foreach (var category in CurrentLevel.Categories)
+			{
+				questions.AddRange(QuestionsModel.Instance.GetQuestions(category));
+			}
+			CurrentLevel.InitializeQuestions(questions);
 		}
 
 		#endregion Public Methods

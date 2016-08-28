@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 using zm.Common;
 using zm.Questioning;
 using zm.Users;
@@ -25,6 +26,21 @@ namespace zm.Levels
 
 		#endregion Constructor
 
+		#region Private Methods
+
+		/// <summary>
+		/// Returns random position that is available.
+		/// </summary>
+		/// <returns></returns>
+		private Vector3 GetPosition()
+		{
+			Vector3 position = availablePositions.GetRandom();
+			availablePositions.Remove(position);
+			return position;
+		}
+
+		#endregion Private Methods
+
 		#region Fields and Properties
 
 		/// <summary>
@@ -36,9 +52,8 @@ namespace zm.Levels
 
 		/// <summary>
 		/// All question that user can answer in this level.
-		/// Mapped by category: Category --> List<Questions>
 		/// </summary>
-		private Dictionary<QuestionCategory, List<Question>> questions;
+		private List<Question> questions;
 
 		/// <summary>
 		/// List of all possible positions for this level.
@@ -69,31 +84,61 @@ namespace zm.Levels
 		}
 
 		/// <summary>
-		/// Holds collection of all users that played this level. 
+		/// Holds collection of all users that played this level.
 		/// </summary>
 		public UsersCollection Users;
- 
+
+		/// <summary>
+		/// Number of questions for this level.
+		/// </summary>
+		public int NumOfQuestions { get; private set; }
+
+		/// <summary>
+		/// Available positions for questions on this level.
+		/// </summary>
+		private List<Vector3> availablePositions;
+
 		#endregion Fields and Properties
 
 		#region Public Methods
 
 		/// <summary>
-		/// Returns random question for passed category.
+		/// Returns random question.
+		/// If there is no more questions in queue, it will return null.
 		/// </summary>
-		public Question GetQuestion(QuestionCategory category)
+		public Question GetQuestion()
 		{
-			return questions[category].GetRandom();
+			Question question = null;
+			if (!questions.IsEmpty())
+			{
+				question = questions.GetRandom();
+				questions.Remove(question);
+				question.Position = GetPosition();
+			}
+			return question;
 		}
 
 		/// <summary>
 		/// Initialize all questions for this level.
 		/// </summary>
 		/// <param name="questions"></param>
-		public void InitializeQuestions(Dictionary<QuestionCategory, List<Question>> questions)
+		public void InitializeQuestions(List<Question> questions)
 		{
 			this.questions = questions;
+			NumOfQuestions = questions.Count;
+			availablePositions = new List<Vector3>(Positions.Collection);
+		}
+
+		/// <summary>
+		/// Returns used position to available positions.
+		/// </summary>
+		/// <param name="position"></param>
+		public void ReturnPosition(Vector3 position)
+		{
+			availablePositions.Add(position);
 		}
 
 		#endregion Public Methods
+
 	}
 }

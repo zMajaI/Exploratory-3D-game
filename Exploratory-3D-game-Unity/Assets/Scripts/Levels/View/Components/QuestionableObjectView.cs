@@ -1,69 +1,69 @@
 ﻿using UnityEngine;
-using System.Collections;
 using zm.Questioning;
 
 namespace zm.Levels
 {
-    public class QuestionableObjectView : MonoBehaviour
-    {
-        #region Fields and Properties
-        [SerializeField]
-        private bool rotate;
+	public class QuestionableObjectView : MonoBehaviour
+	{
+		#region Public Methods
 
-        [SerializeField]
-        private float rotateSpeed = 50f;
+		public void Initialize(Question question)
+		{
+			Question = question;
+			prefab =  Instantiate(QuestionPrefabsProvider.Instance.GetPrefab(question.Category));
+			prefab.transform.parent = transform;
+			prefab.transform.localPosition = Vector3.zero;
+		}
 
-        [SerializeField]
-        private GameObject cube;
+		#endregion Public Methods
 
-        #endregion Fields and Properties
+		#region Fields and Properties
 
-        #region MonoBehaviour Methods
+		[SerializeField]
+		private readonly float rotateSpeed = 50f;
 
-        // Update is called once per frame
-        void Update()
-        {
-            if (rotate)
-            {
-                cube.transform.Rotate(new Vector3(0f, Time.deltaTime * rotateSpeed, 0f));
-            }
-            else
-            {
-                cube.transform.rotation = Quaternion.Euler(Vector3.zero);
-            }
-        }
+		private GameObject prefab;
 
-        public void OnTriggerEnter(Collider other)
-        {
-            rotate = true;
-            Debug.Log("<color=magenta> T Enter <color>");
-        }
+		public Question Question { get; private set; }
 
-        public void OnTriggerExit(Collider other)
-        {
-            rotate = false;
-            Debug.Log("<color=magenta> T Exit <color>");
-        }
+		/// <summary>
+		/// Flag indicating if user is in range to interact with this object.
+		/// </summary>
+		public bool IsTriggered { get; private set; }
 
-        #endregion MonoBehaviour Methods
+		#endregion Fields and Properties
 
-        public void OnCollisionExit(Collision collision)
-        {
-            Debug.Log("<color=magenta>  Enter <color>");
-        }
+		#region MonoBehaviour Methods
 
-        public void OnCollisionEnter(Collision collision)
-        {
-            Debug.Log("<color=magenta> Enter <color>");
-        }
+		// Update is called once per frame
+		private void Update()
+		{
+			if (IsTriggered)
+			{
+				prefab.transform.Rotate(new Vector3(0f, Time.deltaTime * rotateSpeed, 0f));
+			}
+			else
+			{
+				prefab.transform.rotation = Quaternion.Euler(Vector3.zero);
+			}
+		}
 
-        #region Public Methods
+		public void OnTriggerEnter()
+		{
+			IsTriggered = true;
+		}
 
-        public void Initialize(Question question)
-        {
+		public void OnTriggerExit()
+		{
+			IsTriggered = false;
+		}
 
-        }
+		#endregion MonoBehaviour Methods
 
-        #endregion Public Methods
-    }
+		#region Constants
+
+		public const string QuestionsTag = "Questions";
+
+		#endregion Constants
+	}
 }

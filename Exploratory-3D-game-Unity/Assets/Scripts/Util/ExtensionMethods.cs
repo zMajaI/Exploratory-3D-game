@@ -48,7 +48,7 @@ namespace zm.Util
 
         public static T GetRandom<T>(this List<T> list)
         {
-            return list[random.Next(list.Count)];
+            return list[random.Next(list.Count-1)];
         }
 	}
 }

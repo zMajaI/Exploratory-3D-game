@@ -1,154 +1,166 @@
 {
     "Collection": [
         {
-            "Category": 0,
-            "TimeLimit": 1000,
-            "Text": "pitanje1",
+            "Category": 2,
+            "TimeLimit": 60,
+            "Text": "Where is Hogwarts located?",
             "Answers": [
                 {
-                    "Text": "pitanje 1",
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 35,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
                     "IsCorrect": false,
-                    "Id": 1,
-                    "AudioPath": "bla"
+                    "Id": 36,
+                    "AudioPath": ""
                 },
                 {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                },
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                },
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                },
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 37,
+                    "AudioPath": ""
                 }
             ],
-            "Id": 1,
-            "AudioPath": "audio",
-            "Points": 100
+            "AudioPath": "",
+            "Points": 10
         },
         {
             "Category": 2,
-            "TimeLimit": 1000,
-            "Text": "pitanje2",
+            "TimeLimit": 60,
+            "Text": "When is Hogwarts built?",
             "Answers": [
                 {
-                    "Text": "pitanje 1",
+                    "Text": "1",
                     "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
+                    "Id": 38,
+                    "AudioPath": ""
                 },
                 {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                }
-            ],
-            "Id": 1,
-            "AudioPath": "audio",
-            "Points": 100
-        },
-        {
-            "Category": 0,
-            "TimeLimit": 1000,
-            "Text": "pitanje3",
-            "Answers": [
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                },
-                {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
-                }
-            ],
-            "Id": 1,
-            "AudioPath": "audio",
-            "Points": 100
-        },
-        {
-            "Category": 0,
-            "TimeLimit": 1000,
-            "Text": "pitanje 6",
-            "Answers": [
-                {
-                    "Text": "pitanje 1",
+                    "Text": "2",
                     "IsCorrect": false,
-                    "Id": 1,
-                    "AudioPath": "bla"
+                    "Id": 39,
+                    "AudioPath": ""
                 },
                 {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 40,
+                    "AudioPath": ""
                 }
             ],
-            "Id": 1,
-            "AudioPath": "audio",
-            "Points": 100
+            "AudioPath": "",
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 1000,
-            "Text": "pitanje 7",
+            "TimeLimit": 60,
+            "Text": "What is spell for light?",
             "Answers": [
                 {
-                    "Text": "pitanje 1",
+                    "Text": "1",
                     "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
+                    "Id": 41,
+                    "AudioPath": ""
                 },
                 {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 42,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 43,
+                    "AudioPath": ""
                 }
             ],
-            "Id": 1,
-            "AudioPath": "audio",
-            "Points": 100
+            "AudioPath": "",
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 1000,
-            "Text": "pitanje 8",
+            "TimeLimit": 60,
+            "Text": "What is spell for levitation? ",
             "Answers": [
                 {
-                    "Text": "pitanje 1",
+                    "Text": "1",
                     "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
+                    "Id": 44,
+                    "AudioPath": ""
                 },
                 {
-                    "Text": "pitanje 1",
-                    "IsCorrect": true,
-                    "Id": 1,
-                    "AudioPath": "bla"
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 45,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 46,
+                    "AudioPath": ""
                 }
             ],
-            "Id": 1,
-            "AudioPath": "audio",
-            "Points": 100
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 60,
+            "Text": "What is potion for changing looks?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 47,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 48,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 49,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 60,
+            "Text": "What is potion for werewolves?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 50,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 51,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 52,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
         }
     ]
 }

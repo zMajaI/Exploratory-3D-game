@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -28,6 +29,9 @@ namespace zm.Levels
 		[SerializeField]
 		private FirstPersonController fpController;
 
+		[SerializeField]
+		private GameObject Wand;
+
 		#region Question
 
 		[SerializeField]
@@ -48,6 +52,14 @@ namespace zm.Levels
 		[SerializeField]
 		public MainAlerPopup MainAlerPopup;
 
+		[SerializeField]
+		private QuestionableObjectView questionableObjectViewPrefab;
+
+		/// <summary>
+		/// Dictionary holding all questions mapped by id.
+		/// </summary>
+		private readonly Dictionary<int, QuestionableObjectView> questionableObjectViews = new Dictionary<int, QuestionableObjectView>();
+
 		#endregion Question
 
 		/// <summary>
@@ -64,9 +76,19 @@ namespace zm.Levels
 
 		public void Initialize(Level level, User user)
 		{
+			UpdateUser(level, user);
+
+			for (int i = 0; i < level.MaxNumQuestions; i++)
+			{
+				AddQuestion(level.GetQuestion());
+			}
+		}
+
+		public void UpdateUser(Level level, User user)
+		{
 			lblUserName.text = user.Name;
 			lblPoints.text = user.Points.ToString();
-			lblNumOfQuestions.text = user.NumOfAnsweredQuestions + "/" + level.MaxNumQuestions;
+			lblNumOfQuestions.text = user.NumOfAnsweredQuestions + "/" + level.NumOfQuestions;
 		}
 
 		/// <summary>
@@ -114,17 +136,69 @@ namespace zm.Levels
 			HideCursor();
 		}
 
-		#endregion Public Methods
+		public void AddQuestion(Question question)
+		{
+			QuestionableObjectView view = Instantiate(questionableObjectViewPrefab);
+			view.Initialize(question);
+			view.transform.position = question.Position;
+			questionableObjectViews.Add(question.Id, view);
+		}
 
-		#region Private Methods
+		public void RemoveQuestion(Question question)
+		{
+			QuestionableObjectView view = questionableObjectViews[question.Id];
+			questionableObjectViews.Remove(question.Id);
+			Destroy(view.gameObject);
+		}
 
-		private void ShowCursor()
+		/// <summary>
+		/// Returns Question that was hit. If no question is hit - it will return null.
+		/// Also if question is not triggered hit will be treated as miss.
+		/// </summary>
+		/// <returns></returns>
+		public Question GetHitQuestion()
+		{
+			Question question = null;
+
+			RaycastHit hit;
+			Ray ray = new Ray(Wand.transform.position, Wand.transform.TransformDirection(Vector3.forward));
+
+			if (Physics.Raycast(ray, out hit, int.MaxValue))
+			{
+				if (hit.collider != null && hit.transform.gameObject.tag.Equals(QuestionableObjectView.QuestionsTag))
+				{
+					QuestionableObjectView view = hit.transform.gameObject.GetComponent<QuestionableObjectView>();
+					if (view == null)
+					{
+						view = hit.transform.gameObject.GetComponentInParent<QuestionableObjectView>();
+						
+					}
+
+					if (view.IsTriggered)
+					{
+						question = view.Question;
+					}
+					
+				}
+			}
+
+			return question;
+		}
+
+		/// <summary>
+		/// Unlocks cursor and disables player controller.
+		/// </summary>
+		public void ShowCursor()
 		{
 			fpController.enabled = false;
 			Cursor.visible = true;
 			Cursor.lockState = CursorLockMode.None;
 			fpController.m_MouseLook.lockCursor = false;
 		}
+
+		#endregion Public Methods
+
+		#region Private Methods
 
 		private void HideCursor()
 		{

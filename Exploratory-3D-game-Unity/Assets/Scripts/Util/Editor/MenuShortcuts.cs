@@ -4,6 +4,8 @@ using zm.Questioning;
 using zm.Levels;
 using UnityEngine;
 using System.IO;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 namespace zm.Util.EditorTools
 {
@@ -14,10 +16,10 @@ namespace zm.Util.EditorTools
 		[MenuItem("zm.QuestionsCollection/Serialize")]
 		public static void SerializeQuestions()
 		{
-            //QuestionsModel.Instance.AddQuestion(new Question(QuestionCategory.Fruits, 1000L, "pitanje",
+            //QuestionsModel.Instance.AddQuestion(new Question(QuestionCategory.Spells, 1000L, "pitanje",
             //                new List<Answer> {new Answer("pitanje 1", true, 1, "bla"), new Answer("pitanje 1", true, 1, "bla")}, 1, "audio", 100));
 
-            //QuestionsModel.Instance.AddQuestion(new Question(QuestionCategory.Fruits, 1000L, "pitanje",
+            //QuestionsModel.Instance.AddQuestion(new Question(QuestionCategory.Spells, 1000L, "pitanje",
             //                new List<Answer> { new Answer("pitanje 1", true, 1, "bla"), new Answer("pitanje 1", true, 1, "bla") }, 1, "audio", 100));
 		}
 
@@ -34,11 +36,15 @@ namespace zm.Util.EditorTools
             LevelsCollection collection = new LevelsCollection();
             var level = new Level();
             var v3c = new Common.Vector3Collection();
-            v3c.Collection.AddRange(new List<Vector3> { Vector3.zero, Vector3.up });
+	        GameObject[] allGameObject = GameObject.FindGameObjectsWithTag("Positions");
+			foreach (var gO in allGameObject)
+	        {
+		         v3c.Collection.Add(gO.transform.position);
+	        }
             level.Positions = v3c;
-            level.MaxNumQuestions = 10;
-	        level.Name = "Nikola";
-            level.Categories = new QuestionCategory[]{QuestionCategory.Fruits, QuestionCategory.PizdaMaterina};
+            level.MaxNumQuestions = 2;
+	        level.Name = "Harry Potter";
+            level.Categories = new []{QuestionCategory.Spells, QuestionCategory.Potions, QuestionCategory.Hogwarts};
             collection.Collection.Add(level);
             LevelsModel.Instance.levels = collection;
 
