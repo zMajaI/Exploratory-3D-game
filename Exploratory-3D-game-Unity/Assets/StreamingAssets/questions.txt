@@ -1,3 +1,382 @@
 {
-    "Collection": []
+    "Collection": [
+        {
+            "Category": 0,
+            "TimeLimit": 30,
+            "Text": "Which spell \tsummons an object?",
+            "Answers": [
+                {
+                    "Text": "Accio",
+                    "IsCorrect": true,
+                    "Id": 2,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Aguamenti",
+                    "IsCorrect": false,
+                    "Id": 3,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Alohomora",
+                    "IsCorrect": false,
+                    "Id": 4,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which spell \tshoots water from the wand?",
+            "Answers": [
+                {
+                    "Text": "Alohomora",
+                    "IsCorrect": false,
+                    "Id": 5,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Anapneo",
+                    "IsCorrect": false,
+                    "Id": 6,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Aguamenti",
+                    "IsCorrect": true,
+                    "Id": 7,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 30,
+            "Text": "Which spell opens locked objects?",
+            "Answers": [
+                {
+                    "Text": "Aparecium",
+                    "IsCorrect": false,
+                    "Id": 8,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Alohomora",
+                    "IsCorrect": true,
+                    "Id": 9,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Accio",
+                    "IsCorrect": false,
+                    "Id": 10,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which of these spells is unforgivable spell?",
+            "Answers": [
+                {
+                    "Text": "Avis",
+                    "IsCorrect": false,
+                    "Id": 11,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Avifors",
+                    "IsCorrect": false,
+                    "Id": 12,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Avada Kedavra",
+                    "IsCorrect": true,
+                    "Id": 13,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which of these spells is unforgivable spell?",
+            "Answers": [
+                {
+                    "Text": "Crucio",
+                    "IsCorrect": true,
+                    "Id": 14,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Conjunctivitis",
+                    "IsCorrect": false,
+                    "Id": 15,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Colloportus",
+                    "IsCorrect": false,
+                    "Id": 16,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which of these spells is unforgivable spell?",
+            "Answers": [
+                {
+                    "Text": "Immobulus",
+                    "IsCorrect": false,
+                    "Id": 17,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Imperio",
+                    "IsCorrect": true,
+                    "Id": 18,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Incendio",
+                    "IsCorrect": false,
+                    "Id": 19,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which spell makes object to fly?",
+            "Answers": [
+                {
+                    "Text": "Waddiwasi",
+                    "IsCorrect": false,
+                    "Id": 20,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Wingardium Leviosa",
+                    "IsCorrect": true,
+                    "Id": 21,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Tergeo",
+                    "IsCorrect": false,
+                    "Id": 22,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which spell causes body bind?",
+            "Answers": [
+                {
+                    "Text": "Piertotum Locomotor",
+                    "IsCorrect": false,
+                    "Id": 23,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Prior Incantato",
+                    "IsCorrect": false,
+                    "Id": 24,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Petrificus Totalus",
+                    "IsCorrect": true,
+                    "Id": 25,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which spell reveals wands last spell cast?",
+            "Answers": [
+                {
+                    "Text": "Prior Incantato",
+                    "IsCorrect": true,
+                    "Id": 26,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Point Me",
+                    "IsCorrect": false,
+                    "Id": 27,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Pack",
+                    "IsCorrect": false,
+                    "Id": 28,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which spell is counter charm to the Lumos spell?",
+            "Answers": [
+                {
+                    "Text": "Nox",
+                    "IsCorrect": true,
+                    "Id": 29,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Muffliato",
+                    "IsCorrect": false,
+                    "Id": 30,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Morsmordre",
+                    "IsCorrect": false,
+                    "Id": 31,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which spell disarms your opponent?",
+            "Answers": [
+                {
+                    "Text": "Episkey",
+                    "IsCorrect": false,
+                    "Id": 32,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Erecto",
+                    "IsCorrect": false,
+                    "Id": 33,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Expelliarmus",
+                    "IsCorrect": true,
+                    "Id": 34,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which spell creates a Patronus?",
+            "Answers": [
+                {
+                    "Text": "Expulso",
+                    "IsCorrect": false,
+                    "Id": 35,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Episkey",
+                    "IsCorrect": false,
+                    "Id": 36,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Expecto Patronum",
+                    "IsCorrect": true,
+                    "Id": 37,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 0,
+            "Text": "Which spell erases memories?",
+            "Answers": [
+                {
+                    "Text": "Obscuro",
+                    "IsCorrect": false,
+                    "Id": 38,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Obliviate",
+                    "IsCorrect": false,
+                    "Id": 39,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Oppugno",
+                    "IsCorrect": false,
+                    "Id": 40,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 0,
+            "Text": "Which potion ages the drinker to various ages, depending ont the amount taken?",
+            "Answers": [
+                {
+                    "Text": "Ageing Potion",
+                    "IsCorrect": true,
+                    "Id": 41,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Alihotsy Draught",
+                    "IsCorrect": false,
+                    "Id": 42,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Amortentia",
+                    "IsCorrect": false,
+                    "Id": 43,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        }
+    ]
 }

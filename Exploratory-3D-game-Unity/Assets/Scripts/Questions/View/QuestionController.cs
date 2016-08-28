@@ -53,7 +53,6 @@ namespace zm.Questioning
 			UI.SelectedQuestion = 0;
 			// repopulate view after 
 			OnValueChangedCategory();
-
 		}
 
 		public void OnClickBtnChange()
@@ -82,6 +81,7 @@ namespace zm.Questioning
 		{
 			List<Question> questions = Model.GetQuestions(UI.SelectedCategory);
 			UI.UpdateQuestionsDropDown(questions);
+			UI.SelectedQuestion = newValue;
 			UI.UpdateQuestionView(questions.IsEmpty() ? null : questions[newValue]);
 		}
 
@@ -91,7 +91,7 @@ namespace zm.Questioning
 		public void OnValueChangedQuestion(int newValue = 0)
 		{
 			List<Question> questions = Model.GetQuestions(UI.SelectedCategory);
-			UI.UpdateQuestionView(questions[UI.SelectedQuestion]);
+			UI.UpdateQuestionView(questions[(questions.Count <= UI.SelectedQuestion) ? 0 : UI.SelectedQuestion]);
 		}
 
 		/// <summary>
@@ -113,10 +113,11 @@ namespace zm.Questioning
 				// If this is new question - add it to existing pool
 				Model.AddQuestion(UI.EditableQuestionView.Question);
 			}
+
 			// Close editable question and update view
 			OnClickBtnCloseEditableQuestion();
 			OnValueChangedQuestion();
-			OnValueChangedCategory(UI.SelectedQuestion);
+			OnValueChangedCategory((questions.Count <= UI.SelectedQuestion) ? 0 : UI.SelectedQuestion);
 		}
 
 		/// <summary>
