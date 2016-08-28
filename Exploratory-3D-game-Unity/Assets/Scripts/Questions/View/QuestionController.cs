@@ -50,9 +50,10 @@ namespace zm.Questioning
 			// remove question
 			List<Question> questions = Model.GetQuestions(UI.SelectedCategory);
 			Model.RemoveQuestion(questions[UI.SelectedQuestion]);
-
+			UI.SelectedQuestion = 0;
 			// repopulate view after 
 			OnValueChangedCategory();
+
 		}
 
 		public void OnClickBtnChange()

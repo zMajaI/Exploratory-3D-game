@@ -122,6 +122,7 @@ namespace zm.Questioning
 		public int SelectedQuestion
 		{
 			get { return dropDownQuestions.value; }
+			set { dropDownQuestions.value = value; }
 		}
 
 		/// <summary>

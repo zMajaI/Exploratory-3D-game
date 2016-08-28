@@ -28,7 +28,7 @@ namespace zm.Questioning
         /// <summary>
         /// Used for generating unique ids for this class.
         /// </summary>
-        private static int IdGen = 0;
+        private static int IdGen;
 
 		/// <summary>
 		/// Answer body, holding text that should be displayed.
