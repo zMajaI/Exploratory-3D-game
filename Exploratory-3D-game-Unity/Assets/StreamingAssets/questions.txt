@@ -2,7 +2,7 @@
     "Collection": [
         {
             "Category": 2,
-            "TimeLimit": 3,
+            "TimeLimit": 30,
             "Text": "Where is Hogwarts located?",
             "Answers": [
                 {
@@ -29,7 +29,7 @@
         },
         {
             "Category": 2,
-            "TimeLimit": 3,
+            "TimeLimit": 30,
             "Text": "When is Hogwarts built?",
             "Answers": [
                 {
@@ -56,7 +56,7 @@
         },
         {
             "Category": 0,
-            "TimeLimit": 3,
+            "TimeLimit": 30,
             "Text": "What is spell for light?",
             "Answers": [
                 {
@@ -83,7 +83,7 @@
         },
         {
             "Category": 0,
-            "TimeLimit": 3,
+            "TimeLimit": 30,
             "Text": "What is spell for levitation? ",
             "Answers": [
                 {
@@ -110,7 +110,7 @@
         },
         {
             "Category": 1,
-            "TimeLimit": 3,
+            "TimeLimit": 30,
             "Text": "What is potion for changing looks?",
             "Answers": [
                 {
@@ -137,7 +137,493 @@
         },
         {
             "Category": 1,
-            "TimeLimit": 3,
+            "TimeLimit": 30,
+            "Text": "What is potion for werewolves?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 50,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 51,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 52,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+		{
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "Where is Hogwarts located?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 35,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 36,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 37,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "When is Hogwarts built?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 38,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 39,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 40,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 30,
+            "Text": "What is spell for light?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 41,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 42,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 43,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 30,
+            "Text": "What is spell for levitation? ",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 44,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 45,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 46,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "What is potion for changing looks?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 47,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 48,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 49,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "What is potion for werewolves?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 50,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 51,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 52,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+		{
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "Where is Hogwarts located?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 35,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 36,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 37,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "When is Hogwarts built?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 38,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 39,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 40,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 30,
+            "Text": "What is spell for light?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 41,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 42,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 43,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 30,
+            "Text": "What is spell for levitation? ",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 44,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 45,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 46,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "What is potion for changing looks?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 47,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 48,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 49,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "What is potion for werewolves?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 50,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 51,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 52,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+		{
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "Where is Hogwarts located?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 35,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 36,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 37,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "When is Hogwarts built?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 38,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 39,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 40,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 30,
+            "Text": "What is spell for light?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 41,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 42,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 43,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 0,
+            "TimeLimit": 30,
+            "Text": "What is spell for levitation? ",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 44,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 45,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 46,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "What is potion for changing looks?",
+            "Answers": [
+                {
+                    "Text": "1",
+                    "IsCorrect": true,
+                    "Id": 47,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "2",
+                    "IsCorrect": false,
+                    "Id": 48,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "3",
+                    "IsCorrect": false,
+                    "Id": 49,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
             "Text": "What is potion for werewolves?",
             "Answers": [
                 {

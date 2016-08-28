@@ -29,7 +29,7 @@ namespace zm.Questioning
 		/// <summary>
 		/// Initialize view with selected category and all questions for that category.
 		/// </summary>
-		public void InitializeView(List<Question> questions, List<string> categories, int questionIndex = 0)
+		public void Initialize(List<Question> questions, List<string> categories, int questionIndex = 0)
 		{
 			UpdateCategoriesDropDown(categories);
 

@@ -73,6 +73,10 @@ namespace zm.Main
 			{
 				inputUsername.text = currentUser.Name;
 			}
+			else
+			{
+				inputUsername.text = "Draco Malfoy";
+			}
 		}
 
 		/// <summary>
