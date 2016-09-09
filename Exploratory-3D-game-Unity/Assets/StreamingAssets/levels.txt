@@ -45,35 +45,13 @@
                     }
                 ]
             },
-            "MaxNumQuestions": 6,
+            "MaxNumQuestions": 2,
             "Categories": [
                 0,
                 1,
                 2
             ],
-            "Name": "Harry Potter",
-            "Users": {
-                "Collection": [
-                    {
-                        "Points": 120,
-                        "Name": "Draco Malfoy",
-                        "LevelName": "Harry Potter",
-                        "NumOfAnsweredQuestions": 0
-                    },
-                    {
-                        "Points": 190,
-                        "Name": "Harry Potter",
-                        "LevelName": "Harry Potter",
-                        "NumOfAnsweredQuestions": 24
-                    },
-                    {
-                        "Points": 70,
-                        "Name": "zMaja",
-                        "LevelName": "Harry Potter",
-                        "NumOfAnsweredQuestions": 10
-                    }
-                ]
-            }
+            "Name": "Harry Potter"
         }
     ]
 }

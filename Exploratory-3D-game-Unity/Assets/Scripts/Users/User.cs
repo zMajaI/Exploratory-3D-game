@@ -2,51 +2,52 @@
 
 namespace zm.Users
 {
-	[Serializable]
-	public class User
-	{
-		#region Constructor
+    [Serializable]
+    public class User
+    {
+        #region Constructor
 
-		public User(string name, string levelName, int points = 0)
-		{
-			Name = name;
-			LevelName = levelName;
-			Points = points;
-		}
+        public User(string name, string levelName = "", int points = 0)
+        {
+            Name = name;
+            results = new UserResultsCollection();
+        }
 
-		#endregion Constructor
+        #endregion Constructor
 
-		#region Public Methods
+        #region Public Methods
 
-		public void AddPoints(int points)
-		{
-			Points += points;
-		}
+        /// <summary>
+        /// Returns best results for passed level. If user didn't play level - it will return null.
+        /// </summary>
+        public UserResult GetBestResult(string levelName)
+        {
+            UserResult bestResult = null;
+            for (int i = 0; i < results.Collection.Count; i++)
+            {
+                if (results.Collection[i].LevelName.Equals(levelName) && (bestResult == null || bestResult.Points < results.Collection[i].Points))
+                {
+                    bestResult = results.Collection[i];
+                }
+            }
 
-		#endregion Public Methods
+            return bestResult;
+        }
 
-		#region Fields and Properties
+        #endregion Public Methods
 
-		/// <summary>
-		/// Amount of points that user collected.
-		/// </summary>
-		public int Points;
+        #region Fields and Properties
 
-		/// <summary>
-		/// User name that will be displayed during the game.
-		/// </summary>
-		public string Name;
+        /// <summary>
+        /// User name that will be displayed during the game.
+        /// </summary>
+        public string Name;
 
-		/// <summary>
-		/// Level for which we created this user.
-		/// </summary>
-		public string LevelName;
+        /// <summary>
+        /// List of all results for this user, each holds level name.
+        /// </summary>
+        public UserResultsCollection results;
 
-		/// <summary>
-		/// Number of questions that user had opportunity to answer.
-		/// </summary>
-		public int NumOfAnsweredQuestions;
-
-		#endregion Fields and Properties
-	}
+        #endregion Fields and Properties
+    }
 }

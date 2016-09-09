@@ -67,7 +67,7 @@ namespace zm.Questioning
         /// Loads all QuestionsCollection from a file that is stored in QuestionsPath.
         /// All QuestionsCollection are serialized using JSon format.
         /// </summary>
-        public void Initialize()
+        public override void Initialize()
         {
 			if (initialized) return;
 

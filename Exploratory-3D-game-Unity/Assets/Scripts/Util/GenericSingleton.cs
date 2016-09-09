@@ -20,5 +20,10 @@
 
 		#endregion Fields and Properties
 
+        #region Public Methods
+
+        public virtual void Initialize() { }
+
+        #endregion Public Methods
     }
 }

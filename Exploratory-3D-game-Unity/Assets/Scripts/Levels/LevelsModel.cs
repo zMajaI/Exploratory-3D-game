@@ -67,7 +67,7 @@ namespace zm.Levels
 		/// <summary>
 		/// Initialize LevelsModel, populate all levels data.
 		/// </summary>
-		public void Initialize()
+        public override void Initialize()
 		{
 			if (initialized) { return; }
 
@@ -94,31 +94,6 @@ namespace zm.Levels
 				questions.AddRange(QuestionsModel.Instance.GetQuestions(category));
 			}
 			CurrentLevel.InitializeQuestions(questions);
-		}
-
-		/// <summary>
-		/// Adds user to current level. If user already exists and has smaller score this will overwrite it.
-		/// </summary>
-		/// <param name="currentUser"></param>
-		public void AddUser(User currentUser)
-		{
-			List<User> users = CurrentLevel.Users.Collection;
-			foreach (User user in users)
-			{
-				if (user.Name.Equals(currentUser.Name))
-				{
-					if (user.Points < currentUser.Points)
-					{
-						user.Points = currentUser.Points;
-						SaveLevels();
-					}
-					return;
-				}
-			}
-
-			// This user doesn't exist in list of users
-			CurrentLevel.Users.Collection.Add(currentUser);
-			SaveLevels();
 		}
 
 		#endregion Public Methods

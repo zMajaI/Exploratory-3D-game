@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using zm.Common;
 using zm.Levels;
+using zm.Users;
 
 namespace zm.Leaderboards
 {
@@ -17,7 +18,7 @@ namespace zm.Leaderboards
 
 		public void Start()
 		{
-			UI.Initialize(LevelsModel.Instance.Levels.Collection);
+            UI.Initialize(LevelsModel.Instance.Levels.Collection, UsersModel.Instance.GetResultsForLevel(LevelsModel.Instance.Levels.Collection[0].Name));
 		}
 
 		#endregion MonoBehaviour Methods
@@ -29,7 +30,7 @@ namespace zm.Leaderboards
 		/// </summary>
 		public void OnValueChangedLevel(int newValue = 0)
 		{
-			UI.UpdateUsersList(LevelsModel.Instance.Levels.Collection[UI.SelectedLevel]);
+			UI.UpdateUsersList(UsersModel.Instance.GetResultsForLevel(LevelsModel.Instance.Levels.Collection[UI.SelectedLevel].Name));
 		}
 
 		/// <summary>

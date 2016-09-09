@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using zm.Levels;
+﻿using zm.Levels;
 using zm.Users;
 using zm.Util;
 
@@ -19,10 +18,22 @@ namespace zm.Main
 		#region Fields and Properties
 
 		/// <summary>
-		/// User that is currently active in the game.
+		/// User Result that is currently active in the game.
 		/// </summary>
-		public User CurrentUser;
+		public UserResult CurrentUserResult;
 
+        public User CurrentUser
+        {
+            get
+            {
+                if (CurrentUserResult != null)
+                {
+                    return UsersModel.Instance.GetUser(CurrentUserResult.UserName);
+                }
+
+                return null;
+            }
+        }
 		/// <summary>
 		/// Returns collection of all available levels.
 		/// </summary>
@@ -60,21 +71,22 @@ namespace zm.Main
 		/// <summary>
 		/// Initialize all necessary data for Main Scene. This includes initialization of other models: LevelsModel.
 		/// </summary>
-		public void Initialize()
+        public override void Initialize()
 		{
 			if(initialized) return;
 
 			initialized = true;
+            UsersModel.Instance.Initialize();
 			LevelsModel.Instance.Initialize();
 		}
 
 		/// <summary>
-		/// Creates user with passed username for currently selected level.
+		/// Creates user with passed user-name for currently selected level.
 		/// </summary>
 		/// <param name="userName"></param>
-		public void CreateUser(string userName)
+		public void CreateUserResult(string userName, string levelName)
 		{
-			CurrentUser = new User(userName, CurrentlySelectedLevel.Name);
+            CurrentUserResult = new UserResult(userName, levelName);
 		}
 
 		#endregion Public Methods

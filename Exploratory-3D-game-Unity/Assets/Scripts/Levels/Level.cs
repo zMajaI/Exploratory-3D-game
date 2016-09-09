@@ -84,11 +84,6 @@ namespace zm.Levels
 		}
 
 		/// <summary>
-		/// Holds collection of all users that played this level.
-		/// </summary>
-		public UsersCollection Users;
-
-		/// <summary>
 		/// Number of questions for this level.
 		/// </summary>
 		public int NumOfQuestions { get; private set; }

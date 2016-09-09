@@ -4,7 +4,7 @@ using zm.Users;
 
 namespace zm.Leaderboards
 {
-	public class UserRenderer : MonoBehaviour
+	public class UserResultRenderer : MonoBehaviour
 	{
 		#region Fields and Properties
 
@@ -17,10 +17,10 @@ namespace zm.Leaderboards
 		[SerializeField]
 		private Text lblPoints;
 
-		public void Initialize(User user, int position)
+		public void Initialize(UserResult userResult, int position)
 		{
-			lblUserName.text = user.Name;
-			lblPoints.text = user.Points.ToString();
+            lblUserName.text = userResult.UserName;
+            lblPoints.text = userResult.Points.ToString();
 			lblPosition.text = position.ToString();
 		}
 

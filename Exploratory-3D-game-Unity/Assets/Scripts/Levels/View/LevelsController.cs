@@ -2,6 +2,7 @@
 using zm.Common;
 using zm.Main;
 using zm.Questioning;
+using zm.Users;
 using zm.Util;
 
 namespace zm.Levels
@@ -12,13 +13,13 @@ namespace zm.Levels
 
 		private void CloseAnswerInfo()
 		{
-			MainModel.Instance.CurrentUser.NumOfAnsweredQuestions++;
+			MainModel.Instance.CurrentUserResult.NumOfAnsweredQuestions++;
 
 			UI.HideQuestion();
 
 			// Remove this question
 			UI.RemoveQuestion(currentQuestion);
-			UI.UpdateUser(Model.CurrentLevel, MainModel.Instance.CurrentUser);
+			UI.UpdateUser(Model.CurrentLevel, MainModel.Instance.CurrentUserResult);
 
 			Question newQuestion = Model.CurrentLevel.GetQuestion();
 
@@ -32,7 +33,7 @@ namespace zm.Levels
 			Model.CurrentLevel.ReturnPosition(currentQuestion.Position);
 
 			//Check if this is end game
-			if (MainModel.Instance.CurrentUser.NumOfAnsweredQuestions == Model.CurrentLevel.NumOfQuestions)
+			if (MainModel.Instance.CurrentUserResult.NumOfAnsweredQuestions == Model.CurrentLevel.NumOfQuestions)
 			{
 				EndGame();
 			}
@@ -45,8 +46,8 @@ namespace zm.Levels
 		/// </summary>
 		private void EndGame()
 		{
-			Model.AddUser(MainModel.Instance.CurrentUser);
-			UI.ShowEndGame(MainModel.Instance.CurrentUser, Model.CurrentLevel);
+            UsersModel.Instance.SaveUserResult(MainModel.Instance.CurrentUserResult);
+            UI.ShowEndGame(MainModel.Instance.CurrentUserResult, Model.CurrentLevel);
 		}
 
 		#endregion Private Methods
@@ -73,7 +74,7 @@ namespace zm.Levels
 		// Use this for initialization
 		private void Start()
 		{
-			UI.Initialize(Model.CurrentLevel, MainModel.Instance.CurrentUser);
+			UI.Initialize(Model.CurrentLevel, MainModel.Instance.CurrentUserResult);
 		}
 
 		// Update is called once per frame
@@ -145,7 +146,7 @@ namespace zm.Levels
 			else if (answer.IsCorrect)
 			{
 				UI.MainAlerPopup.Show("Correct!\nYou gained " + currentQuestion.Points + " points!", CloseAnswerInfo);
-				MainModel.Instance.CurrentUser.AddPoints(currentQuestion.Points);
+				MainModel.Instance.CurrentUserResult.AddPoints(currentQuestion.Points);
 			}
 			else
 			{
@@ -166,7 +167,7 @@ namespace zm.Levels
 		/// </summary>
 		public void OnBtnClickReplay()
 		{
-			MainModel.Instance.CreateUser(MainModel.Instance.CurrentUser.Name);
+            MainModel.Instance.CreateUserResult(MainModel.Instance.CurrentUser.Name, Model.CurrentLevel.Name);
 			SceneNavigation.LoadLevel();
 		}
 

@@ -29,7 +29,7 @@
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which spell \tshoots water from the wand?",
             "Answers": [
                 {
@@ -52,7 +52,7 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 0,
@@ -83,7 +83,7 @@
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which of these spells is unforgivable spell?",
             "Answers": [
                 {
@@ -106,11 +106,11 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which of these spells is unforgivable spell?",
             "Answers": [
                 {
@@ -133,11 +133,11 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which of these spells is unforgivable spell?",
             "Answers": [
                 {
@@ -160,11 +160,11 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which spell makes object to fly?",
             "Answers": [
                 {
@@ -187,11 +187,11 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which spell causes body bind?",
             "Answers": [
                 {
@@ -214,11 +214,11 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which spell reveals wands last spell cast?",
             "Answers": [
                 {
@@ -241,11 +241,11 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which spell is counter charm to the Lumos spell?",
             "Answers": [
                 {
@@ -268,11 +268,11 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which spell disarms your opponent?",
             "Answers": [
                 {
@@ -295,11 +295,11 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which spell creates a Patronus?",
             "Answers": [
                 {
@@ -322,11 +322,11 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 0,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which spell erases memories?",
             "Answers": [
                 {
@@ -349,11 +349,11 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 1,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which potion ages the drinker to various ages, depending ont the amount taken?",
             "Answers": [
                 {
@@ -376,7 +376,7 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         }
     ]
 }

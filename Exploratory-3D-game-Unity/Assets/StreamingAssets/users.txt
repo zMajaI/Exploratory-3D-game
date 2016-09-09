@@ -1,0 +1,54 @@
+{
+    "Collection": [
+        {
+            "Name": "Draco Malfoy",
+            "results": {
+                "Collection": [
+                    {
+                        "Points": 10,
+                        "UserName": "Draco Malfoy",
+                        "LevelName": "Harry Potter",
+                        "NumOfAnsweredQuestions": 1
+                    },
+                    {
+                        "Points": 0,
+                        "UserName": "Draco Malfoy",
+                        "LevelName": "Harry Potter",
+                        "NumOfAnsweredQuestions": 1
+                    },
+                    {
+                        "Points": 50,
+                        "UserName": "Draco Malfoy",
+                        "LevelName": "Harry Potter",
+                        "NumOfAnsweredQuestions": 5
+                    }
+                ]
+            }
+        },
+        {
+            "Name": "MajaI",
+            "results": {
+                "Collection": [
+                    {
+                        "Points": 0,
+                        "UserName": "MajaI",
+                        "LevelName": "Harry Potter",
+                        "NumOfAnsweredQuestions": 0
+                    },
+                    {
+                        "Points": 0,
+                        "UserName": "MajaI",
+                        "LevelName": "Harry Potter",
+                        "NumOfAnsweredQuestions": 0
+                    },
+                    {
+                        "Points": 20,
+                        "UserName": "MajaI",
+                        "LevelName": "Harry Potter",
+                        "NumOfAnsweredQuestions": 3
+                    }
+                ]
+            }
+        }
+    ]
+}

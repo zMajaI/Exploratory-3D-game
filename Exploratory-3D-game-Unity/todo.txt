@@ -1,16 +1,11 @@
--object on Level scene that are enabled for interaction whit user, some animation when user comes close enough, raycast from the wand
--display question, register points, timer for count down
--how will we do updating of which questions are answered etc.
--detect end game - when user answers on last question
+UsersModel -> Collection of user
+UserModel -> CurrentUser
+Start game - invoke getUser
 
-End Screen
-Leaderboards Screen
+User -> Collection of results
+User -> GetMaxResult(Level);
 
-Sack audio and Sack setting button - no need for that
-Write draft for Zorz to see how are you doing
-
-
-
+Leaderboards -> list of users that 
 
 
 

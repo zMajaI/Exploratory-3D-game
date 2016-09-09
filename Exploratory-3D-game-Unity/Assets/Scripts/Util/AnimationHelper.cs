@@ -38,11 +38,10 @@ public class AnimationHelper : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
-        startPostion = endPosition = transform.position;
+        endPosition = transform.position;
     }
 
     private Vector3 endPosition;
-    private Vector3 startPostion;
     private bool direction = true;
 
     void LateUpdate()

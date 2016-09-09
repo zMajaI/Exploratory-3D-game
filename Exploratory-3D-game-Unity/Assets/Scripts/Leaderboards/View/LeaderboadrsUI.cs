@@ -18,7 +18,7 @@ namespace zm.Leaderboards
 		private VerticalLayoutGroup lstUsers;
 
 		[SerializeField]
-		private UserRenderer userRendererPrefab;
+		private UserResultRenderer userRendererPrefab;
 
 		/// <summary>
 		/// Returns index of currently selected level.
@@ -35,7 +35,7 @@ namespace zm.Leaderboards
 		/// <summary>
 		/// Initialize view with all possible levels and set selected one.
 		/// </summary>
-		public void Initialize(List<Level> levels)
+		public void Initialize(List<Level> levels, List<UserResult> userResults)
 		{
 			dropdownLevels.ClearOptions();
 			List<string> levelNames = new List<string>();
@@ -46,22 +46,22 @@ namespace zm.Leaderboards
 			dropdownLevels.AddOptions(levelNames);
 			
 			// select first level
-			UpdateUsersList(levels[0]);
+            UpdateUsersList(userResults);
 		}
 
 		/// <summary>
 		/// Updates list of users for selected level.
 		/// </summary>
 		/// <param name="level"></param>
-		public void UpdateUsersList(Level level)
+		public void UpdateUsersList(List<UserResult> userResults)
 		{
-			level.Users.Collection.Sort((x, y) => y.Points.CompareTo(x.Points));
+			userResults.Sort((x, y) => y.Points.CompareTo(x.Points));
 
 			lstUsers.transform.Clear();
 			int position = 1;
-			foreach (User user in level.Users.Collection)
+			foreach (UserResult user in userResults)
 			{
-				UserRenderer userRenderer = Instantiate(userRendererPrefab);
+				UserResultRenderer userRenderer = Instantiate(userRendererPrefab);
 				userRenderer.Initialize(user, position++);
 				userRenderer.transform.SetParent(lstUsers.transform, false);
 			}

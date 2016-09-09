@@ -87,9 +87,9 @@ namespace zm.Levels
 
 		#region Public Methods
 
-		public void Initialize(Level level, User user)
+        public void Initialize(Level level, UserResult userResult)
 		{
-			UpdateUser(level, user);
+            UpdateUser(level, userResult);
 
 			for (int i = 0; i < level.MaxNumQuestions; i++)
 			{
@@ -97,11 +97,11 @@ namespace zm.Levels
 			}
 		}
 
-		public void UpdateUser(Level level, User user)
+		public void UpdateUser(Level level, UserResult userResult)
 		{
-			lblUserName.text = user.Name;
-			lblPoints.text = user.Points.ToString();
-			lblNumOfQuestions.text = user.NumOfAnsweredQuestions + "/" + level.NumOfQuestions;
+            lblUserName.text = userResult.UserName;
+            lblPoints.text = userResult.Points.ToString();
+            lblNumOfQuestions.text = userResult.NumOfAnsweredQuestions + "/" + level.NumOfQuestions;
 		}
 
 		/// <summary>
@@ -204,10 +204,10 @@ namespace zm.Levels
 		/// <summary>
 		/// Display end game component with basic information from last game.
 		/// </summary>
-		public void ShowEndGame(User user, Level level)
+		public void ShowEndGame(UserResult userResult, Level level)
 		{
-			lblUserNameEndGame.text = user.Name;
-			lblPointsEndGame.text = "Points: " + user.Points + "/" + level.MaxPoints;
+            lblUserNameEndGame.text = userResult.UserName;
+            lblPointsEndGame.text = "Points: " + userResult.Points + "/" + level.MaxPoints;
 			endGameComponent.gameObject.SetActive(true);
 			ShowCursor();
 		}
