@@ -59,7 +59,7 @@ namespace zm.Levels
 		}
 
 		[SerializeField]
-		private LeveslUI UI;
+		private LevelsUI UI;
 
 		[SerializeField]
 		private Timer timer;

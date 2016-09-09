@@ -27,7 +27,7 @@ namespace zm.Main
 		private InputField inputUsername;
 
 		[SerializeField]
-		public MainAlerPopup MainAlerPopup;
+		public MainAlertPopup MainAlerPopup;
 
 		#endregion Prefabs
 

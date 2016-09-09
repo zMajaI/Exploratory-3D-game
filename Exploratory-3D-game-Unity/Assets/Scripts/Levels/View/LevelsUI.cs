@@ -10,7 +10,7 @@ using zm.Util;
 
 namespace zm.Levels
 {
-	public class LeveslUI : MonoBehaviour
+	public class LevelsUI : MonoBehaviour
 	{
 		#region Fields and Properties
 
@@ -50,7 +50,7 @@ namespace zm.Levels
 		private AnswerRenderer answerRendererPrefab;
 
 		[SerializeField]
-		public MainAlerPopup MainAlerPopup;
+		public MainAlertPopup MainAlerPopup;
 
 		[SerializeField]
 		private QuestionableObjectView questionableObjectViewPrefab;

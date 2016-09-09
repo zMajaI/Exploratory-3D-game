@@ -7,7 +7,7 @@ namespace zm.Questioning
 	/// <summary>
 	/// Component that represents one question that is either newly created or existing but modified.
 	/// </summary>
-	public class EditableQuestionView : MonoBehaviour
+    public class EditableQuestionView : QuestionViewBase
 	{
 		#region Fields and Properties
 
@@ -16,7 +16,7 @@ namespace zm.Questioning
 		/// <summary>
 		/// Populates view for passed question.
 		/// </summary>
-		public Question Question
+		public override Question Question
 		{
 			set
 			{
@@ -47,20 +47,7 @@ namespace zm.Questioning
 		private InputField inputQuestionTime;
 
 		[SerializeField]
-		private Text lblQuestionCategory;
-
-		[SerializeField]
-		private VerticalLayoutGroup lstAnswers;
-
-		[SerializeField]
 		private ToggleGroup toggleGroupAnswers;
-		
-		#region Prefabs
-
-		[SerializeField]
-		private EditableAnswerRenderer answerRendererPrefab;
-
-		#endregion Prefabs
 
 		#endregion Fields and Properties
 
@@ -87,7 +74,7 @@ namespace zm.Questioning
 		/// </summary>
 		public void AddAnswer(Answer answer)
 		{
-			EditableAnswerRenderer answerRenderer = Instantiate(answerRendererPrefab);
+            EditableAnswerRenderer answerRenderer = Instantiate(answerRendererPrefab) as EditableAnswerRenderer;
 			answerRenderer.Answer = answer;
 			answerRenderer.transform.SetParent(lstAnswers.transform, false);
 			answerRenderer.SetToggleGroup(toggleGroupAnswers);

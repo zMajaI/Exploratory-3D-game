@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace zm.Questioning
 {
-	public class EditableAnswerRenderer : MonoBehaviour
+    public class EditableAnswerRenderer : AnswerRendererBase
 	{
 		#region Public Methods
 
@@ -25,9 +25,7 @@ namespace zm.Questioning
 
 		#region Fields and Properties
 
-		private Answer answer;
-
-		public Answer Answer
+		public override Answer Answer
 		{
 			set
 			{

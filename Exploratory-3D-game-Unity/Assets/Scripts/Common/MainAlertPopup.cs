@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace zm.Common
 {
-	public class MainAlerPopup : MonoBehaviour
+	public class MainAlertPopup : MonoBehaviour
 	{
 		#region Public Methods
 

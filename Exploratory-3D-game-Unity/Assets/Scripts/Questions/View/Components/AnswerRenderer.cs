@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 namespace zm.Questioning
 {
-	public class AnswerRenderer : MonoBehaviour
+    public class AnswerRenderer : AnswerRendererBase
 	{
 		#region Fields and Properties
 
-		public Answer Answer
+		public override Answer Answer
 		{
 			set
 			{
