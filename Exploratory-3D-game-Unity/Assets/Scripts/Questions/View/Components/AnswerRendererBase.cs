@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace zm.Questioning
 {
-    public class AnswerRendererBase : MonoBehaviour
+    public abstract class AnswerRendererBase : MonoBehaviour
     {
 
         #region Fields and Properties

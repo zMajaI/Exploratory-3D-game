@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using zm.Questioning;
 
 namespace zm.Levels
@@ -13,16 +14,16 @@ namespace zm.Levels
 			prefab =  Instantiate(QuestionPrefabsProvider.Instance.GetPrefab(question.Category));
 			prefab.transform.parent = transform;
 			prefab.transform.localPosition = Vector3.zero;
+            animations.AddRange(gameObject.GetComponentsInChildren<Animation>());
 		}
 
 		#endregion Public Methods
 
 		#region Fields and Properties
 
-		[SerializeField]
-		private readonly float rotateSpeed = 50f;
-
 		private GameObject prefab;
+
+        private List<Animation> animations = new List<Animation>();
 
 		public Question Question { get; private set; }
 
@@ -38,14 +39,10 @@ namespace zm.Levels
 		// Update is called once per frame
 		private void Update()
 		{
-			if (IsTriggered)
-			{
-				prefab.transform.Rotate(new Vector3(0f, Time.deltaTime * rotateSpeed, 0f));
-			}
-			else
-			{
-				prefab.transform.rotation = Quaternion.Euler(Vector3.zero);
-			}
+            for (int i = 0; i < animations.Count; i++)
+            {
+                animations[i].enabled = IsTriggered;
+            }
 		}
 
 		public void OnTriggerEnter()
