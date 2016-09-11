@@ -67,6 +67,16 @@ namespace zm.Levels
 
 		private Question currentQuestion;
 
+        /// <summary>
+        /// Flag indicating if user is currently in pause mode.
+        /// </summary>
+        private bool pause;
+
+        /// <summary>
+        /// Flag indicating if user is currently in questioning mode.
+        /// </summary>
+        private bool questioning;
+
 		#endregion Fields and Properties
 
 		#region MonoBehaviour Methods
@@ -88,7 +98,7 @@ namespace zm.Levels
 			}
 
 			// Handle Key input for pause menu
-			if (Input.GetKeyUp("p"))
+			if (Input.GetKeyUp("p") && currentQuestion == null)
 			{
 				if (UI.PauseMenuShown)
 				{
@@ -101,7 +111,7 @@ namespace zm.Levels
 			}
 
 			// Handle mouse click for opening question view
-			if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) && !UI.PauseMenuShown)
 			{
 				currentQuestion = UI.GetHitQuestion();
 				if (currentQuestion != null)

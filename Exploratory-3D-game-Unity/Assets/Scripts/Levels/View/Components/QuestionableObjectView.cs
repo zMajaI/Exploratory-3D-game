@@ -4,63 +4,66 @@ using zm.Questioning;
 
 namespace zm.Levels
 {
-	public class QuestionableObjectView : MonoBehaviour
-	{
-		#region Public Methods
+    public class QuestionableObjectView : MonoBehaviour
+    {
+        #region Public Methods
 
-		public void Initialize(Question question)
-		{
-			Question = question;
-			prefab =  Instantiate(QuestionPrefabsProvider.Instance.GetPrefab(question.Category));
-			prefab.transform.parent = transform;
-			prefab.transform.localPosition = Vector3.zero;
+        public void Initialize(Question question)
+        {
+            Question = question;
+            prefab = Instantiate(QuestionPrefabsProvider.Instance.GetPrefab(question.Category));
+            prefab.transform.parent = transform;
+            prefab.transform.localPosition = Vector3.zero;
             animations.AddRange(gameObject.GetComponentsInChildren<Animation>());
-		}
+        }
 
-		#endregion Public Methods
+        #endregion Public Methods
 
-		#region Fields and Properties
+        #region Fields and Properties
 
-		private GameObject prefab;
+        private GameObject prefab;
 
         private List<Animation> animations = new List<Animation>();
 
-		public Question Question { get; private set; }
+        public Question Question { get; private set; }
 
-		/// <summary>
-		/// Flag indicating if user is in range to interact with this object.
-		/// </summary>
-		public bool IsTriggered { get; private set; }
+        /// <summary>
+        /// Flag indicating if user is in range to interact with this object.
+        /// </summary>
+        public bool IsTriggered { get; private set; }
 
-		#endregion Fields and Properties
+        #endregion Fields and Properties
 
-		#region MonoBehaviour Methods
+        #region MonoBehaviour Methods
 
-		// Update is called once per frame
-		private void Update()
-		{
+        // Update is called once per frame
+        private void Update()
+        {
             for (int i = 0; i < animations.Count; i++)
             {
-                animations[i].enabled = IsTriggered;
+                foreach (AnimationState state in animations[i])
+                {
+                    state.speed = IsTriggered? 1f : 0f;
+                }
             }
-		}
+        }
 
-		public void OnTriggerEnter()
-		{
-			IsTriggered = true;
-		}
+        public void OnTriggerEnter()
+        {
+            IsTriggered = true;
+        }
 
-		public void OnTriggerExit()
-		{
-			IsTriggered = false;
-		}
+        public void OnTriggerExit()
+        {
+            IsTriggered = false;
+        }
 
-		#endregion MonoBehaviour Methods
+        #endregion MonoBehaviour Methods
 
-		#region Constants
+        #region Constants
 
-		public const string QuestionsTag = "Questions";
+        public const string QuestionsTag = "Questions";
 
-		#endregion Constants
-	}
+        #endregion Constants
+    }
 }
