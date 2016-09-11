@@ -9,6 +9,7 @@ namespace zm.Main
 
         private void Start()
         {
+            PlayerPrefs.DeleteAll();
             Model.Initialize();
             UI.Initialize(Model.Levels, OnClickLevelRenderer, Model.CurrentlySelectedLevel, Model.CurrentUser);
         }
