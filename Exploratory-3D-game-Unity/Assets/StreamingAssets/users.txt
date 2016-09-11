@@ -87,6 +87,12 @@
                         "UserName": "Draco Malfoy",
                         "LevelName": "Harry Potter",
                         "NumOfAnsweredQuestions": 1
+                    },
+                    {
+                        "Points": 10,
+                        "UserName": "Draco Malfoy",
+                        "LevelName": "Harry Potter",
+                        "NumOfAnsweredQuestions": 1
                     }
                 ]
             }
