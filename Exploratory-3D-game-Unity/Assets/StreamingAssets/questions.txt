@@ -337,7 +337,7 @@
                 },
                 {
                     "Text": "Obliviate",
-                    "IsCorrect": false,
+                    "IsCorrect": true,
                     "Id": 39,
                     "AudioPath": ""
                 },
@@ -372,6 +372,411 @@
                     "Text": "Amortentia",
                     "IsCorrect": false,
                     "Id": 43,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "Which potion causes hysteria?",
+            "Answers": [
+                {
+                    "Text": "Alihotsy Draught",
+                    "IsCorrect": true,
+                    "Id": 45,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Amortentia",
+                    "IsCorrect": false,
+                    "Id": 46,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Angel's Trumpet Draught",
+                    "IsCorrect": false,
+                    "Id": 47,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "Which potion heals paralysis?",
+            "Answers": [
+                {
+                    "Text": "Anti-Paralysis Potion",
+                    "IsCorrect": true,
+                    "Id": 48,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Angel's Trumpet Draught",
+                    "IsCorrect": false,
+                    "Id": 49,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Antidote to Uncommon Poisons",
+                    "IsCorrect": false,
+                    "Id": 50,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "Which potion causes uncontrollable speaking of nonsense?",
+            "Answers": [
+                {
+                    "Text": "Beautification Potion",
+                    "IsCorrect": false,
+                    "Id": 51,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Baneberry Potion",
+                    "IsCorrect": false,
+                    "Id": 52,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Babbling Beverage",
+                    "IsCorrect": true,
+                    "Id": 53,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "Which potion makes its taker beautifull?",
+            "Answers": [
+                {
+                    "Text": "Baneberry Potion",
+                    "IsCorrect": false,
+                    "Id": 54,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Beautification Potion",
+                    "IsCorrect": true,
+                    "Id": 55,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Bulgeye Potion",
+                    "IsCorrect": false,
+                    "Id": 56,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 0,
+            "Text": "Which potion make the taker's eyes swell?",
+            "Answers": [
+                {
+                    "Text": "Bulgeye Potion",
+                    "IsCorrect": true,
+                    "Id": 57,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Bundimun Secretion",
+                    "IsCorrect": false,
+                    "Id": 58,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Burn-healing paste",
+                    "IsCorrect": false,
+                    "Id": 59,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 0
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "Which potion releases green clouds od smoke?",
+            "Answers": [
+                {
+                    "Text": "Magi-Me-More",
+                    "IsCorrect": false,
+                    "Id": 60,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Noxious Potion",
+                    "IsCorrect": true,
+                    "Id": 61,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Mandrake Restorative Draught",
+                    "IsCorrect": false,
+                    "Id": 62,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "Which potion is used to silence people and various objects?",
+            "Answers": [
+                {
+                    "Text": "Manegro Potion",
+                    "IsCorrect": false,
+                    "Id": 63,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Murtlap Essence",
+                    "IsCorrect": false,
+                    "Id": 64,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Muffling Draught",
+                    "IsCorrect": true,
+                    "Id": 65,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 1,
+            "TimeLimit": 30,
+            "Text": "Which potion causes hair on taker's head to grow rapidlu?",
+            "Answers": [
+                {
+                    "Text": "Manegro Potion",
+                    "IsCorrect": true,
+                    "Id": 66,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Moonseed Poison",
+                    "IsCorrect": false,
+                    "Id": 67,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Murtlap Essence",
+                    "IsCorrect": false,
+                    "Id": 68,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "Which Harry Potter word is now in the Oxford English Dictionary?",
+            "Answers": [
+                {
+                    "Text": "Hogwarts",
+                    "IsCorrect": false,
+                    "Id": 69,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Voldemort",
+                    "IsCorrect": false,
+                    "Id": 70,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Muggle",
+                    "IsCorrect": true,
+                    "Id": 71,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "Which of these Hogwarts professors teaches Transfiguration?",
+            "Answers": [
+                {
+                    "Text": "Snape",
+                    "IsCorrect": false,
+                    "Id": 72,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Sprout",
+                    "IsCorrect": false,
+                    "Id": 73,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "McGonagall",
+                    "IsCorrect": true,
+                    "Id": 74,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "Who was Tom Marvolo Riddle?",
+            "Answers": [
+                {
+                    "Text": "Harry Potter's father",
+                    "IsCorrect": false,
+                    "Id": 75,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Voldemort",
+                    "IsCorrect": true,
+                    "Id": 76,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Sirius Black",
+                    "IsCorrect": false,
+                    "Id": 77,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "Who killed Dumbledore?",
+            "Answers": [
+                {
+                    "Text": "Lucius Malfoy",
+                    "IsCorrect": false,
+                    "Id": 78,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Draco Malfoy",
+                    "IsCorrect": false,
+                    "Id": 79,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Snape",
+                    "IsCorrect": true,
+                    "Id": 80,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "What kind of creature is Fluffy?",
+            "Answers": [
+                {
+                    "Text": "Hellhound",
+                    "IsCorrect": true,
+                    "Id": 81,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Acromantula",
+                    "IsCorrect": false,
+                    "Id": 82,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Niffler",
+                    "IsCorrect": false,
+                    "Id": 83,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 10,
+            "Text": "What type of creature is Dobby?",
+            "Answers": [
+                {
+                    "Text": "House-Elf",
+                    "IsCorrect": true,
+                    "Id": 84,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Goblin",
+                    "IsCorrect": false,
+                    "Id": 85,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Centaur",
+                    "IsCorrect": false,
+                    "Id": 86,
+                    "AudioPath": ""
+                }
+            ],
+            "AudioPath": "",
+            "Points": 10
+        },
+        {
+            "Category": 2,
+            "TimeLimit": 30,
+            "Text": "What fruit must one tickle in order to gain access to the kitchens?",
+            "Answers": [
+                {
+                    "Text": "Grape",
+                    "IsCorrect": false,
+                    "Id": 87,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Pear",
+                    "IsCorrect": true,
+                    "Id": 88,
+                    "AudioPath": ""
+                },
+                {
+                    "Text": "Orange",
+                    "IsCorrect": false,
+                    "Id": 89,
                     "AudioPath": ""
                 }
             ],

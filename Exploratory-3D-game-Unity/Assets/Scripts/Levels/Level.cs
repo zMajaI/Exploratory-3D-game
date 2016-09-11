@@ -127,6 +127,7 @@ namespace zm.Levels
 			this.questions = questions;
 			NumOfQuestions = questions.Count;
 			MaxPoints = 0;
+            MaxNumQuestions = questions.Count < MaxNumQuestions ? questions.Count : MaxNumQuestions;
 			foreach (Question question in questions)
 			{
 				MaxPoints += question.Points;

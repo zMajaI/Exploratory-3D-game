@@ -42,7 +42,7 @@ namespace zm.Util.EditorTools
 		         v3c.Collection.Add(gO.transform.position);
 	        }
             level.Positions = v3c;
-            level.MaxNumQuestions = 2;
+            level.MaxNumQuestions = 100;
 	        level.Name = "Harry Potter";
             level.Categories = new []{QuestionCategory.Spells, QuestionCategory.Potions, QuestionCategory.Hogwarts};
             collection.Collection.Add(level);
@@ -61,6 +61,12 @@ namespace zm.Util.EditorTools
         public static void DeserializeLevel()
         {
             LevelsModel.Instance.Initialize();
+
+        }
+
+        [MenuItem("zm/A")]
+        public static void Nesto()
+        {
 
         }
 

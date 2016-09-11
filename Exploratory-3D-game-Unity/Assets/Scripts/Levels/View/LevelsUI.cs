@@ -90,7 +90,6 @@ namespace zm.Levels
         public void Initialize(Level level, UserResult userResult)
 		{
             UpdateUser(level, userResult);
-
 			for (int i = 0; i < level.MaxNumQuestions; i++)
 			{
 				AddQuestion(level.GetQuestion());

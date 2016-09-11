@@ -33,9 +33,9 @@ public class QuestionPrefabsProvider : GenericSingleton<QuestionPrefabsProvider>
 	/// </summary>
 	private readonly Dictionary<QuestionCategory, int> maxIndexByCategory = new Dictionary<QuestionCategory, int>
 	{
-		{QuestionCategory.Hogwarts, 8},
-		{QuestionCategory.Potions, 1},
-		{QuestionCategory.Spells, 1}
+		{QuestionCategory.Hogwarts, 7},
+		{QuestionCategory.Potions, 3},
+		{QuestionCategory.Spells, 5}
 	};
 
 	/// <summary>

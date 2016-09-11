@@ -1,14 +1,10 @@
-UsersModel -> Collection of user
-UserModel -> CurrentUser
-Start game - invoke getUser
 
-User -> Collection of results
-User -> GetMaxResult(Level);
-
-Leaderboards -> list of users that 
 
 Add music, add UI, add object, update images for docs
+Add positions, text colors
+Prefabs update in code
 
+Colliders on prefabs
 
 
 

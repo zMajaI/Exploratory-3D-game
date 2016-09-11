@@ -155,7 +155,7 @@ namespace zm.Levels
 			}
 			else if (answer.IsCorrect)
 			{
-				UI.MainAlerPopup.Show("Correct!\nYou gained " + currentQuestion.Points + " points!", CloseAnswerInfo);
+                UI.MainAlerPopup.Show("Well done!\n" + currentQuestion.Points + " points for Gryffindor!", CloseAnswerInfo);
 				MainModel.Instance.CurrentUserResult.AddPoints(currentQuestion.Points);
 			}
 			else
