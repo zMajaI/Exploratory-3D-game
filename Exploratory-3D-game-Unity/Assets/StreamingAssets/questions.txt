@@ -488,7 +488,7 @@
         },
         {
             "Category": 1,
-            "TimeLimit": 0,
+            "TimeLimit": 30,
             "Text": "Which potion make the taker's eyes swell?",
             "Answers": [
                 {
@@ -511,7 +511,7 @@
                 }
             ],
             "AudioPath": "",
-            "Points": 0
+            "Points": 10
         },
         {
             "Category": 1,
