@@ -10,6 +10,7 @@ namespace zm.Main
         private void Start()
         {
             PlayerPrefs.DeleteAll();
+            Application.targetFrameRate = 90;
             Model.Initialize();
             UI.Initialize(Model.Levels, OnClickLevelRenderer, Model.CurrentlySelectedLevel, Model.CurrentUser);
         }
